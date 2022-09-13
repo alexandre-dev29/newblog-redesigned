@@ -1,0 +1,13 @@
+query GetOneAuthor($id: ID!){
+    Author(id: $id){
+        _id
+        slug {
+            current
+        }
+        bio
+        _createdAt
+        image {
+            ...ImageFragment
+        }
+    }
+}

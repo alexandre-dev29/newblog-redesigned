@@ -1,0 +1,113 @@
+query GetAllCategories($limit: Int,$offset: Int,$sort: [CategorySorting!],$where: CategoryFilter){
+    allCategory(sort: $sort, limit: $limit, offset: $offset, where: $where){
+        _id
+        _createdAt
+        _key
+        _updatedAt
+        title
+        description
+        featured {
+            title
+            description
+            publishedAt
+            tags
+            author {
+                name
+                image {
+                    ...ImageFragment
+                }
+            }
+        }
+        mainImage {
+            ...ImageFragment
+        }
+
+    }
+}
+
+query GetCategoryByTitle($title: String){
+    allCategory( where: {title: {eq: $title}}, limit: 1){
+        _id
+        _createdAt
+        _key
+        _updatedAt
+        title
+        description
+        featured {
+            title
+            description
+            publishedAt
+            tags
+            author {
+                name
+                image {
+                    ...ImageFragment
+                }
+            }
+        }
+        mainImage {
+            ...ImageFragment
+        }
+
+    }
+}
+
+query GetOneCategory($id: ID!){
+    Category(id: $id){
+        _id
+        _createdAt
+        _key
+        _updatedAt
+        title
+        description
+        featured {
+            title
+            description
+            publishedAt
+            tags
+            author {
+                name
+                image {
+                    ...ImageFragment
+                }
+            }
+        }
+        mainImage {
+            ...ImageFragment
+        }
+
+    }
+}
+
+
+
+fragment ImageFragment on Image{
+    _key
+    _type
+    __typename
+    asset {
+        description
+        title
+        size
+        url
+        altText
+        label
+        extension
+        mimeType
+        originalFilename
+        source {
+            url
+            name
+            id
+        }
+        metadata {
+            blurHash
+        }
+    }
+    crop {
+        bottom
+        left
+        right
+        top
+    }
+}
