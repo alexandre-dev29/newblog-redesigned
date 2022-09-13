@@ -61,16 +61,7 @@ query GetOneCategory($id: ID!){
         title
         description
         featured {
-            title
-            description
-            publishedAt
-            tags
-            author {
-                name
-                image {
-                    ...ImageFragment
-                }
-            }
+           ...PostFragment
         }
         mainImage {
             ...ImageFragment
