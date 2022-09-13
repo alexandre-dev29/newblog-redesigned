@@ -3,15 +3,9 @@ import { gql } from "@apollo/client";
 
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
-export type Exact<T extends { [key: string]: unknown }> = {
-  [K in keyof T]: T[K];
-};
-export type MakeOptional<T, K extends keyof T> = Omit<T, K> & {
-  [SubKey in K]?: Maybe<T[SubKey]>;
-};
-export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & {
-  [SubKey in K]: Maybe<T[SubKey]>;
-};
+export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
+export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
+export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
 const defaultOptions = {} as const;
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
@@ -946,10 +940,7 @@ export type GetOneAuthorQuery = {
           name?: string | null;
           id?: string | null;
         } | null;
-        metadata?: {
-          __typename?: "SanityImageMetadata";
-          blurHash?: string | null;
-        } | null;
+        metadata?: { __typename?: "SanityImageMetadata"; blurHash?: string | null } | null;
       } | null;
       crop?: {
         __typename?: "SanityImageCrop";
@@ -1009,10 +1000,7 @@ export type GetAllCategoriesQuery = {
               name?: string | null;
               id?: string | null;
             } | null;
-            metadata?: {
-              __typename?: "SanityImageMetadata";
-              blurHash?: string | null;
-            } | null;
+            metadata?: { __typename?: "SanityImageMetadata"; blurHash?: string | null } | null;
           } | null;
           crop?: {
             __typename?: "SanityImageCrop";
@@ -1045,10 +1033,7 @@ export type GetAllCategoriesQuery = {
           name?: string | null;
           id?: string | null;
         } | null;
-        metadata?: {
-          __typename?: "SanityImageMetadata";
-          blurHash?: string | null;
-        } | null;
+        metadata?: { __typename?: "SanityImageMetadata"; blurHash?: string | null } | null;
       } | null;
       crop?: {
         __typename?: "SanityImageCrop";
@@ -1105,10 +1090,7 @@ export type GetCategoryByTitleQuery = {
               name?: string | null;
               id?: string | null;
             } | null;
-            metadata?: {
-              __typename?: "SanityImageMetadata";
-              blurHash?: string | null;
-            } | null;
+            metadata?: { __typename?: "SanityImageMetadata"; blurHash?: string | null } | null;
           } | null;
           crop?: {
             __typename?: "SanityImageCrop";
@@ -1141,10 +1123,7 @@ export type GetCategoryByTitleQuery = {
           name?: string | null;
           id?: string | null;
         } | null;
-        metadata?: {
-          __typename?: "SanityImageMetadata";
-          blurHash?: string | null;
-        } | null;
+        metadata?: { __typename?: "SanityImageMetadata"; blurHash?: string | null } | null;
       } | null;
       crop?: {
         __typename?: "SanityImageCrop";
@@ -1203,10 +1182,7 @@ export type GetOneCategoryQuery = {
             name?: string | null;
             id?: string | null;
           } | null;
-          metadata?: {
-            __typename?: "SanityImageMetadata";
-            blurHash?: string | null;
-          } | null;
+          metadata?: { __typename?: "SanityImageMetadata"; blurHash?: string | null } | null;
         } | null;
         crop?: {
           __typename?: "SanityImageCrop";
@@ -1240,10 +1216,7 @@ export type GetOneCategoryQuery = {
               name?: string | null;
               id?: string | null;
             } | null;
-            metadata?: {
-              __typename?: "SanityImageMetadata";
-              blurHash?: string | null;
-            } | null;
+            metadata?: { __typename?: "SanityImageMetadata"; blurHash?: string | null } | null;
           } | null;
           crop?: {
             __typename?: "SanityImageCrop";
@@ -1282,10 +1255,7 @@ export type GetOneCategoryQuery = {
           name?: string | null;
           id?: string | null;
         } | null;
-        metadata?: {
-          __typename?: "SanityImageMetadata";
-          blurHash?: string | null;
-        } | null;
+        metadata?: { __typename?: "SanityImageMetadata"; blurHash?: string | null } | null;
       } | null;
       crop?: {
         __typename?: "SanityImageCrop";
@@ -1319,10 +1289,7 @@ export type ImageFragmentFragment = {
       name?: string | null;
       id?: string | null;
     } | null;
-    metadata?: {
-      __typename?: "SanityImageMetadata";
-      blurHash?: string | null;
-    } | null;
+    metadata?: { __typename?: "SanityImageMetadata"; blurHash?: string | null } | null;
   } | null;
   crop?: {
     __typename?: "SanityImageCrop";
@@ -1379,10 +1346,7 @@ export type GetAllFeaturedPostQuery = {
             name?: string | null;
             id?: string | null;
           } | null;
-          metadata?: {
-            __typename?: "SanityImageMetadata";
-            blurHash?: string | null;
-          } | null;
+          metadata?: { __typename?: "SanityImageMetadata"; blurHash?: string | null } | null;
         } | null;
         crop?: {
           __typename?: "SanityImageCrop";
@@ -1416,10 +1380,7 @@ export type GetAllFeaturedPostQuery = {
               name?: string | null;
               id?: string | null;
             } | null;
-            metadata?: {
-              __typename?: "SanityImageMetadata";
-              blurHash?: string | null;
-            } | null;
+            metadata?: { __typename?: "SanityImageMetadata"; blurHash?: string | null } | null;
           } | null;
           crop?: {
             __typename?: "SanityImageCrop";
@@ -1481,10 +1442,7 @@ export type GetAllPostsQuery = {
           name?: string | null;
           id?: string | null;
         } | null;
-        metadata?: {
-          __typename?: "SanityImageMetadata";
-          blurHash?: string | null;
-        } | null;
+        metadata?: { __typename?: "SanityImageMetadata"; blurHash?: string | null } | null;
       } | null;
       crop?: {
         __typename?: "SanityImageCrop";
@@ -1518,10 +1476,7 @@ export type GetAllPostsQuery = {
             name?: string | null;
             id?: string | null;
           } | null;
-          metadata?: {
-            __typename?: "SanityImageMetadata";
-            blurHash?: string | null;
-          } | null;
+          metadata?: { __typename?: "SanityImageMetadata"; blurHash?: string | null } | null;
         } | null;
         crop?: {
           __typename?: "SanityImageCrop";
@@ -1579,10 +1534,7 @@ export type GetOnePostQuery = {
           name?: string | null;
           id?: string | null;
         } | null;
-        metadata?: {
-          __typename?: "SanityImageMetadata";
-          blurHash?: string | null;
-        } | null;
+        metadata?: { __typename?: "SanityImageMetadata"; blurHash?: string | null } | null;
       } | null;
       crop?: {
         __typename?: "SanityImageCrop";
@@ -1616,10 +1568,7 @@ export type GetOnePostQuery = {
             name?: string | null;
             id?: string | null;
           } | null;
-          metadata?: {
-            __typename?: "SanityImageMetadata";
-            blurHash?: string | null;
-          } | null;
+          metadata?: { __typename?: "SanityImageMetadata"; blurHash?: string | null } | null;
         } | null;
         crop?: {
           __typename?: "SanityImageCrop";
@@ -1677,10 +1626,7 @@ export type GetPostBySlugQuery = {
           name?: string | null;
           id?: string | null;
         } | null;
-        metadata?: {
-          __typename?: "SanityImageMetadata";
-          blurHash?: string | null;
-        } | null;
+        metadata?: { __typename?: "SanityImageMetadata"; blurHash?: string | null } | null;
       } | null;
       crop?: {
         __typename?: "SanityImageCrop";
@@ -1714,10 +1660,184 @@ export type GetPostBySlugQuery = {
             name?: string | null;
             id?: string | null;
           } | null;
-          metadata?: {
-            __typename?: "SanityImageMetadata";
-            blurHash?: string | null;
+          metadata?: { __typename?: "SanityImageMetadata"; blurHash?: string | null } | null;
+        } | null;
+        crop?: {
+          __typename?: "SanityImageCrop";
+          bottom?: number | null;
+          left?: number | null;
+          right?: number | null;
+          top?: number | null;
+        } | null;
+      } | null;
+      slug?: { __typename?: "Slug"; current?: string | null } | null;
+    } | null;
+    categories?: Array<{
+      __typename?: "Category";
+      title?: string | null;
+      description?: string | null;
+    } | null> | null;
+  }>;
+};
+
+export type GetIndexPageDataQueryVariables = Exact<{ [key: string]: never }>;
+
+export type GetIndexPageDataQuery = {
+  __typename?: "RootQuery";
+  allFeaturedArticle: Array<{
+    __typename?: "FeaturedArticle";
+    featured?: {
+      __typename?: "Post";
+      _id?: string | null;
+      _createdAt?: any | null;
+      publishedAt?: any | null;
+      title?: string | null;
+      description?: string | null;
+      tags?: Array<string | null> | null;
+      content?: string | null;
+      viewCount?: number | null;
+      slug?: { __typename?: "Slug"; current?: string | null } | null;
+      mainImage?: {
+        __typename: "Image";
+        _key?: string | null;
+        _type?: string | null;
+        asset?: {
+          __typename?: "SanityImageAsset";
+          description?: string | null;
+          title?: string | null;
+          size?: number | null;
+          url?: string | null;
+          altText?: string | null;
+          label?: string | null;
+          extension?: string | null;
+          mimeType?: string | null;
+          originalFilename?: string | null;
+          source?: {
+            __typename?: "SanityAssetSourceData";
+            url?: string | null;
+            name?: string | null;
+            id?: string | null;
           } | null;
+          metadata?: { __typename?: "SanityImageMetadata"; blurHash?: string | null } | null;
+        } | null;
+        crop?: {
+          __typename?: "SanityImageCrop";
+          bottom?: number | null;
+          left?: number | null;
+          right?: number | null;
+          top?: number | null;
+        } | null;
+      } | null;
+      author?: {
+        __typename?: "Author";
+        name?: string | null;
+        image?: {
+          __typename: "Image";
+          _key?: string | null;
+          _type?: string | null;
+          asset?: {
+            __typename?: "SanityImageAsset";
+            description?: string | null;
+            title?: string | null;
+            size?: number | null;
+            url?: string | null;
+            altText?: string | null;
+            label?: string | null;
+            extension?: string | null;
+            mimeType?: string | null;
+            originalFilename?: string | null;
+            source?: {
+              __typename?: "SanityAssetSourceData";
+              url?: string | null;
+              name?: string | null;
+              id?: string | null;
+            } | null;
+            metadata?: { __typename?: "SanityImageMetadata"; blurHash?: string | null } | null;
+          } | null;
+          crop?: {
+            __typename?: "SanityImageCrop";
+            bottom?: number | null;
+            left?: number | null;
+            right?: number | null;
+            top?: number | null;
+          } | null;
+        } | null;
+        slug?: { __typename?: "Slug"; current?: string | null } | null;
+      } | null;
+      categories?: Array<{
+        __typename?: "Category";
+        title?: string | null;
+        description?: string | null;
+      } | null> | null;
+    } | null;
+  }>;
+  allPost: Array<{
+    __typename?: "Post";
+    _id?: string | null;
+    _createdAt?: any | null;
+    publishedAt?: any | null;
+    title?: string | null;
+    description?: string | null;
+    tags?: Array<string | null> | null;
+    content?: string | null;
+    viewCount?: number | null;
+    slug?: { __typename?: "Slug"; current?: string | null } | null;
+    mainImage?: {
+      __typename: "Image";
+      _key?: string | null;
+      _type?: string | null;
+      asset?: {
+        __typename?: "SanityImageAsset";
+        description?: string | null;
+        title?: string | null;
+        size?: number | null;
+        url?: string | null;
+        altText?: string | null;
+        label?: string | null;
+        extension?: string | null;
+        mimeType?: string | null;
+        originalFilename?: string | null;
+        source?: {
+          __typename?: "SanityAssetSourceData";
+          url?: string | null;
+          name?: string | null;
+          id?: string | null;
+        } | null;
+        metadata?: { __typename?: "SanityImageMetadata"; blurHash?: string | null } | null;
+      } | null;
+      crop?: {
+        __typename?: "SanityImageCrop";
+        bottom?: number | null;
+        left?: number | null;
+        right?: number | null;
+        top?: number | null;
+      } | null;
+    } | null;
+    author?: {
+      __typename?: "Author";
+      name?: string | null;
+      image?: {
+        __typename: "Image";
+        _key?: string | null;
+        _type?: string | null;
+        asset?: {
+          __typename?: "SanityImageAsset";
+          description?: string | null;
+          title?: string | null;
+          size?: number | null;
+          url?: string | null;
+          altText?: string | null;
+          label?: string | null;
+          extension?: string | null;
+          mimeType?: string | null;
+          originalFilename?: string | null;
+          source?: {
+            __typename?: "SanityAssetSourceData";
+            url?: string | null;
+            name?: string | null;
+            id?: string | null;
+          } | null;
+          metadata?: { __typename?: "SanityImageMetadata"; blurHash?: string | null } | null;
         } | null;
         crop?: {
           __typename?: "SanityImageCrop";
@@ -1769,10 +1889,7 @@ export type PostFragmentFragment = {
         name?: string | null;
         id?: string | null;
       } | null;
-      metadata?: {
-        __typename?: "SanityImageMetadata";
-        blurHash?: string | null;
-      } | null;
+      metadata?: { __typename?: "SanityImageMetadata"; blurHash?: string | null } | null;
     } | null;
     crop?: {
       __typename?: "SanityImageCrop";
@@ -1806,10 +1923,7 @@ export type PostFragmentFragment = {
           name?: string | null;
           id?: string | null;
         } | null;
-        metadata?: {
-          __typename?: "SanityImageMetadata";
-          blurHash?: string | null;
-        } | null;
+        metadata?: { __typename?: "SanityImageMetadata"; blurHash?: string | null } | null;
       } | null;
       crop?: {
         __typename?: "SanityImageCrop";
@@ -1929,46 +2043,24 @@ export const GetOneAuthorDocument = gql`
  * });
  */
 export function useGetOneAuthorQuery(
-  baseOptions: Apollo.QueryHookOptions<
-    GetOneAuthorQuery,
-    GetOneAuthorQueryVariables
-  >
+  baseOptions: Apollo.QueryHookOptions<GetOneAuthorQuery, GetOneAuthorQueryVariables>
 ) {
   const options = { ...defaultOptions, ...baseOptions };
-  return Apollo.useQuery<GetOneAuthorQuery, GetOneAuthorQueryVariables>(
-    GetOneAuthorDocument,
-    options
-  );
+  return Apollo.useQuery<GetOneAuthorQuery, GetOneAuthorQueryVariables>(GetOneAuthorDocument, options);
 }
+
 export function useGetOneAuthorLazyQuery(
-  baseOptions?: Apollo.LazyQueryHookOptions<
-    GetOneAuthorQuery,
-    GetOneAuthorQueryVariables
-  >
+  baseOptions?: Apollo.LazyQueryHookOptions<GetOneAuthorQuery, GetOneAuthorQueryVariables>
 ) {
   const options = { ...defaultOptions, ...baseOptions };
-  return Apollo.useLazyQuery<GetOneAuthorQuery, GetOneAuthorQueryVariables>(
-    GetOneAuthorDocument,
-    options
-  );
+  return Apollo.useLazyQuery<GetOneAuthorQuery, GetOneAuthorQueryVariables>(GetOneAuthorDocument, options);
 }
-export type GetOneAuthorQueryHookResult = ReturnType<
-  typeof useGetOneAuthorQuery
->;
-export type GetOneAuthorLazyQueryHookResult = ReturnType<
-  typeof useGetOneAuthorLazyQuery
->;
-export type GetOneAuthorQueryResult = Apollo.QueryResult<
-  GetOneAuthorQuery,
-  GetOneAuthorQueryVariables
->;
+
+export type GetOneAuthorQueryHookResult = ReturnType<typeof useGetOneAuthorQuery>;
+export type GetOneAuthorLazyQueryHookResult = ReturnType<typeof useGetOneAuthorLazyQuery>;
+export type GetOneAuthorQueryResult = Apollo.QueryResult<GetOneAuthorQuery, GetOneAuthorQueryVariables>;
 export const GetAllCategoriesDocument = gql`
-  query GetAllCategories(
-    $limit: Int
-    $offset: Int
-    $sort: [CategorySorting!]
-    $where: CategoryFilter
-  ) {
+  query GetAllCategories($limit: Int, $offset: Int, $sort: [CategorySorting!], $where: CategoryFilter) {
     allCategory(sort: $sort, limit: $limit, offset: $offset, where: $where) {
       _id
       _createdAt
@@ -2016,10 +2108,7 @@ export const GetAllCategoriesDocument = gql`
  * });
  */
 export function useGetAllCategoriesQuery(
-  baseOptions?: Apollo.QueryHookOptions<
-    GetAllCategoriesQuery,
-    GetAllCategoriesQueryVariables
-  >
+  baseOptions?: Apollo.QueryHookOptions<GetAllCategoriesQuery, GetAllCategoriesQueryVariables>
 ) {
   const options = { ...defaultOptions, ...baseOptions };
   return Apollo.useQuery<GetAllCategoriesQuery, GetAllCategoriesQueryVariables>(
@@ -2027,24 +2116,19 @@ export function useGetAllCategoriesQuery(
     options
   );
 }
+
 export function useGetAllCategoriesLazyQuery(
-  baseOptions?: Apollo.LazyQueryHookOptions<
-    GetAllCategoriesQuery,
-    GetAllCategoriesQueryVariables
-  >
+  baseOptions?: Apollo.LazyQueryHookOptions<GetAllCategoriesQuery, GetAllCategoriesQueryVariables>
 ) {
   const options = { ...defaultOptions, ...baseOptions };
-  return Apollo.useLazyQuery<
-    GetAllCategoriesQuery,
-    GetAllCategoriesQueryVariables
-  >(GetAllCategoriesDocument, options);
+  return Apollo.useLazyQuery<GetAllCategoriesQuery, GetAllCategoriesQueryVariables>(
+    GetAllCategoriesDocument,
+    options
+  );
 }
-export type GetAllCategoriesQueryHookResult = ReturnType<
-  typeof useGetAllCategoriesQuery
->;
-export type GetAllCategoriesLazyQueryHookResult = ReturnType<
-  typeof useGetAllCategoriesLazyQuery
->;
+
+export type GetAllCategoriesQueryHookResult = ReturnType<typeof useGetAllCategoriesQuery>;
+export type GetAllCategoriesLazyQueryHookResult = ReturnType<typeof useGetAllCategoriesLazyQuery>;
 export type GetAllCategoriesQueryResult = Apollo.QueryResult<
   GetAllCategoriesQuery,
   GetAllCategoriesQueryVariables
@@ -2095,35 +2179,27 @@ export const GetCategoryByTitleDocument = gql`
  * });
  */
 export function useGetCategoryByTitleQuery(
-  baseOptions?: Apollo.QueryHookOptions<
-    GetCategoryByTitleQuery,
-    GetCategoryByTitleQueryVariables
-  >
+  baseOptions?: Apollo.QueryHookOptions<GetCategoryByTitleQuery, GetCategoryByTitleQueryVariables>
 ) {
   const options = { ...defaultOptions, ...baseOptions };
-  return Apollo.useQuery<
-    GetCategoryByTitleQuery,
-    GetCategoryByTitleQueryVariables
-  >(GetCategoryByTitleDocument, options);
+  return Apollo.useQuery<GetCategoryByTitleQuery, GetCategoryByTitleQueryVariables>(
+    GetCategoryByTitleDocument,
+    options
+  );
 }
+
 export function useGetCategoryByTitleLazyQuery(
-  baseOptions?: Apollo.LazyQueryHookOptions<
-    GetCategoryByTitleQuery,
-    GetCategoryByTitleQueryVariables
-  >
+  baseOptions?: Apollo.LazyQueryHookOptions<GetCategoryByTitleQuery, GetCategoryByTitleQueryVariables>
 ) {
   const options = { ...defaultOptions, ...baseOptions };
-  return Apollo.useLazyQuery<
-    GetCategoryByTitleQuery,
-    GetCategoryByTitleQueryVariables
-  >(GetCategoryByTitleDocument, options);
+  return Apollo.useLazyQuery<GetCategoryByTitleQuery, GetCategoryByTitleQueryVariables>(
+    GetCategoryByTitleDocument,
+    options
+  );
 }
-export type GetCategoryByTitleQueryHookResult = ReturnType<
-  typeof useGetCategoryByTitleQuery
->;
-export type GetCategoryByTitleLazyQueryHookResult = ReturnType<
-  typeof useGetCategoryByTitleLazyQuery
->;
+
+export type GetCategoryByTitleQueryHookResult = ReturnType<typeof useGetCategoryByTitleQuery>;
+export type GetCategoryByTitleLazyQueryHookResult = ReturnType<typeof useGetCategoryByTitleLazyQuery>;
 export type GetCategoryByTitleQueryResult = Apollo.QueryResult<
   GetCategoryByTitleQuery,
   GetCategoryByTitleQueryVariables
@@ -2166,22 +2242,14 @@ export const GetOneCategoryDocument = gql`
  * });
  */
 export function useGetOneCategoryQuery(
-  baseOptions: Apollo.QueryHookOptions<
-    GetOneCategoryQuery,
-    GetOneCategoryQueryVariables
-  >
+  baseOptions: Apollo.QueryHookOptions<GetOneCategoryQuery, GetOneCategoryQueryVariables>
 ) {
   const options = { ...defaultOptions, ...baseOptions };
-  return Apollo.useQuery<GetOneCategoryQuery, GetOneCategoryQueryVariables>(
-    GetOneCategoryDocument,
-    options
-  );
+  return Apollo.useQuery<GetOneCategoryQuery, GetOneCategoryQueryVariables>(GetOneCategoryDocument, options);
 }
+
 export function useGetOneCategoryLazyQuery(
-  baseOptions?: Apollo.LazyQueryHookOptions<
-    GetOneCategoryQuery,
-    GetOneCategoryQueryVariables
-  >
+  baseOptions?: Apollo.LazyQueryHookOptions<GetOneCategoryQuery, GetOneCategoryQueryVariables>
 ) {
   const options = { ...defaultOptions, ...baseOptions };
   return Apollo.useLazyQuery<GetOneCategoryQuery, GetOneCategoryQueryVariables>(
@@ -2190,16 +2258,9 @@ export function useGetOneCategoryLazyQuery(
   );
 }
 
-export type GetOneCategoryQueryHookResult = ReturnType<
-  typeof useGetOneCategoryQuery
->;
-export type GetOneCategoryLazyQueryHookResult = ReturnType<
-  typeof useGetOneCategoryLazyQuery
->;
-export type GetOneCategoryQueryResult = Apollo.QueryResult<
-  GetOneCategoryQuery,
-  GetOneCategoryQueryVariables
->;
+export type GetOneCategoryQueryHookResult = ReturnType<typeof useGetOneCategoryQuery>;
+export type GetOneCategoryLazyQueryHookResult = ReturnType<typeof useGetOneCategoryLazyQuery>;
+export type GetOneCategoryQueryResult = Apollo.QueryResult<GetOneCategoryQuery, GetOneCategoryQueryVariables>;
 export const GetAllFeaturedPostDocument = gql`
   query GetAllFeaturedPost(
     $limit: Int
@@ -2207,12 +2268,7 @@ export const GetAllFeaturedPostDocument = gql`
     $sort: [FeaturedArticleSorting!]
     $where: FeaturedArticleFilter
   ) {
-    allFeaturedArticle(
-      where: $where
-      limit: $limit
-      sort: $sort
-      offset: $offset
-    ) {
+    allFeaturedArticle(where: $where, limit: $limit, sort: $sort, offset: $offset) {
       _id
       _createdAt
       _key
@@ -2244,48 +2300,33 @@ export const GetAllFeaturedPostDocument = gql`
  * });
  */
 export function useGetAllFeaturedPostQuery(
-  baseOptions?: Apollo.QueryHookOptions<
-    GetAllFeaturedPostQuery,
-    GetAllFeaturedPostQueryVariables
-  >
+  baseOptions?: Apollo.QueryHookOptions<GetAllFeaturedPostQuery, GetAllFeaturedPostQueryVariables>
 ) {
   const options = { ...defaultOptions, ...baseOptions };
-  return Apollo.useQuery<
-    GetAllFeaturedPostQuery,
-    GetAllFeaturedPostQueryVariables
-  >(GetAllFeaturedPostDocument, options);
+  return Apollo.useQuery<GetAllFeaturedPostQuery, GetAllFeaturedPostQueryVariables>(
+    GetAllFeaturedPostDocument,
+    options
+  );
 }
 
 export function useGetAllFeaturedPostLazyQuery(
-  baseOptions?: Apollo.LazyQueryHookOptions<
-    GetAllFeaturedPostQuery,
-    GetAllFeaturedPostQueryVariables
-  >
+  baseOptions?: Apollo.LazyQueryHookOptions<GetAllFeaturedPostQuery, GetAllFeaturedPostQueryVariables>
 ) {
   const options = { ...defaultOptions, ...baseOptions };
-  return Apollo.useLazyQuery<
-    GetAllFeaturedPostQuery,
-    GetAllFeaturedPostQueryVariables
-  >(GetAllFeaturedPostDocument, options);
+  return Apollo.useLazyQuery<GetAllFeaturedPostQuery, GetAllFeaturedPostQueryVariables>(
+    GetAllFeaturedPostDocument,
+    options
+  );
 }
 
-export type GetAllFeaturedPostQueryHookResult = ReturnType<
-  typeof useGetAllFeaturedPostQuery
->;
-export type GetAllFeaturedPostLazyQueryHookResult = ReturnType<
-  typeof useGetAllFeaturedPostLazyQuery
->;
+export type GetAllFeaturedPostQueryHookResult = ReturnType<typeof useGetAllFeaturedPostQuery>;
+export type GetAllFeaturedPostLazyQueryHookResult = ReturnType<typeof useGetAllFeaturedPostLazyQuery>;
 export type GetAllFeaturedPostQueryResult = Apollo.QueryResult<
   GetAllFeaturedPostQuery,
   GetAllFeaturedPostQueryVariables
 >;
 export const GetAllPostsDocument = gql`
-  query GetAllPosts(
-    $limit: Int
-    $offset: Int
-    $sort: [PostSorting!]
-    $where: PostFilter
-  ) {
+  query GetAllPosts($limit: Int, $offset: Int, $sort: [PostSorting!], $where: PostFilter) {
     allPost(limit: $limit, where: $where, offset: $offset, sort: $sort) {
       ...PostFragment
     }
@@ -2313,37 +2354,22 @@ export const GetAllPostsDocument = gql`
  * });
  */
 export function useGetAllPostsQuery(
-  baseOptions?: Apollo.QueryHookOptions<
-    GetAllPostsQuery,
-    GetAllPostsQueryVariables
-  >
+  baseOptions?: Apollo.QueryHookOptions<GetAllPostsQuery, GetAllPostsQueryVariables>
 ) {
   const options = { ...defaultOptions, ...baseOptions };
-  return Apollo.useQuery<GetAllPostsQuery, GetAllPostsQueryVariables>(
-    GetAllPostsDocument,
-    options
-  );
+  return Apollo.useQuery<GetAllPostsQuery, GetAllPostsQueryVariables>(GetAllPostsDocument, options);
 }
+
 export function useGetAllPostsLazyQuery(
-  baseOptions?: Apollo.LazyQueryHookOptions<
-    GetAllPostsQuery,
-    GetAllPostsQueryVariables
-  >
+  baseOptions?: Apollo.LazyQueryHookOptions<GetAllPostsQuery, GetAllPostsQueryVariables>
 ) {
   const options = { ...defaultOptions, ...baseOptions };
-  return Apollo.useLazyQuery<GetAllPostsQuery, GetAllPostsQueryVariables>(
-    GetAllPostsDocument,
-    options
-  );
+  return Apollo.useLazyQuery<GetAllPostsQuery, GetAllPostsQueryVariables>(GetAllPostsDocument, options);
 }
+
 export type GetAllPostsQueryHookResult = ReturnType<typeof useGetAllPostsQuery>;
-export type GetAllPostsLazyQueryHookResult = ReturnType<
-  typeof useGetAllPostsLazyQuery
->;
-export type GetAllPostsQueryResult = Apollo.QueryResult<
-  GetAllPostsQuery,
-  GetAllPostsQueryVariables
->;
+export type GetAllPostsLazyQueryHookResult = ReturnType<typeof useGetAllPostsLazyQuery>;
+export type GetAllPostsQueryResult = Apollo.QueryResult<GetAllPostsQuery, GetAllPostsQueryVariables>;
 export const GetOnePostDocument = gql`
   query GetOnePost($id: ID!) {
     Post(id: $id) {
@@ -2370,40 +2396,25 @@ export const GetOnePostDocument = gql`
  * });
  */
 export function useGetOnePostQuery(
-  baseOptions: Apollo.QueryHookOptions<
-    GetOnePostQuery,
-    GetOnePostQueryVariables
-  >
+  baseOptions: Apollo.QueryHookOptions<GetOnePostQuery, GetOnePostQueryVariables>
 ) {
   const options = { ...defaultOptions, ...baseOptions };
-  return Apollo.useQuery<GetOnePostQuery, GetOnePostQueryVariables>(
-    GetOnePostDocument,
-    options
-  );
+  return Apollo.useQuery<GetOnePostQuery, GetOnePostQueryVariables>(GetOnePostDocument, options);
 }
+
 export function useGetOnePostLazyQuery(
-  baseOptions?: Apollo.LazyQueryHookOptions<
-    GetOnePostQuery,
-    GetOnePostQueryVariables
-  >
+  baseOptions?: Apollo.LazyQueryHookOptions<GetOnePostQuery, GetOnePostQueryVariables>
 ) {
   const options = { ...defaultOptions, ...baseOptions };
-  return Apollo.useLazyQuery<GetOnePostQuery, GetOnePostQueryVariables>(
-    GetOnePostDocument,
-    options
-  );
+  return Apollo.useLazyQuery<GetOnePostQuery, GetOnePostQueryVariables>(GetOnePostDocument, options);
 }
+
 export type GetOnePostQueryHookResult = ReturnType<typeof useGetOnePostQuery>;
-export type GetOnePostLazyQueryHookResult = ReturnType<
-  typeof useGetOnePostLazyQuery
->;
-export type GetOnePostQueryResult = Apollo.QueryResult<
-  GetOnePostQuery,
-  GetOnePostQueryVariables
->;
+export type GetOnePostLazyQueryHookResult = ReturnType<typeof useGetOnePostLazyQuery>;
+export type GetOnePostQueryResult = Apollo.QueryResult<GetOnePostQuery, GetOnePostQueryVariables>;
 export const GetPostBySlugDocument = gql`
   query GetPostBySlug($slug: String) {
-    allPost(where: { slug: { current: { eq: $slug } } }, limit: 0) {
+    allPost(where: { slug: { current: { eq: $slug } } }, limit: 1) {
       ...PostFragment
     }
   }
@@ -2427,36 +2438,74 @@ export const GetPostBySlugDocument = gql`
  * });
  */
 export function useGetPostBySlugQuery(
-  baseOptions?: Apollo.QueryHookOptions<
-    GetPostBySlugQuery,
-    GetPostBySlugQueryVariables
-  >
+  baseOptions?: Apollo.QueryHookOptions<GetPostBySlugQuery, GetPostBySlugQueryVariables>
 ) {
   const options = { ...defaultOptions, ...baseOptions };
-  return Apollo.useQuery<GetPostBySlugQuery, GetPostBySlugQueryVariables>(
-    GetPostBySlugDocument,
-    options
-  );
+  return Apollo.useQuery<GetPostBySlugQuery, GetPostBySlugQueryVariables>(GetPostBySlugDocument, options);
 }
+
 export function useGetPostBySlugLazyQuery(
-  baseOptions?: Apollo.LazyQueryHookOptions<
-    GetPostBySlugQuery,
-    GetPostBySlugQueryVariables
-  >
+  baseOptions?: Apollo.LazyQueryHookOptions<GetPostBySlugQuery, GetPostBySlugQueryVariables>
 ) {
   const options = { ...defaultOptions, ...baseOptions };
-  return Apollo.useLazyQuery<GetPostBySlugQuery, GetPostBySlugQueryVariables>(
-    GetPostBySlugDocument,
+  return Apollo.useLazyQuery<GetPostBySlugQuery, GetPostBySlugQueryVariables>(GetPostBySlugDocument, options);
+}
+
+export type GetPostBySlugQueryHookResult = ReturnType<typeof useGetPostBySlugQuery>;
+export type GetPostBySlugLazyQueryHookResult = ReturnType<typeof useGetPostBySlugLazyQuery>;
+export type GetPostBySlugQueryResult = Apollo.QueryResult<GetPostBySlugQuery, GetPostBySlugQueryVariables>;
+export const GetIndexPageDataDocument = gql`
+  query GetIndexPageData {
+    allFeaturedArticle {
+      featured {
+        ...PostFragment
+      }
+    }
+    allPost {
+      ...PostFragment
+    }
+  }
+  ${PostFragmentFragmentDoc}
+`;
+
+/**
+ * __useGetIndexPageDataQuery__
+ *
+ * To run a query within a React component, call `useGetIndexPageDataQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetIndexPageDataQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetIndexPageDataQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetIndexPageDataQuery(
+  baseOptions?: Apollo.QueryHookOptions<GetIndexPageDataQuery, GetIndexPageDataQueryVariables>
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useQuery<GetIndexPageDataQuery, GetIndexPageDataQueryVariables>(
+    GetIndexPageDataDocument,
     options
   );
 }
-export type GetPostBySlugQueryHookResult = ReturnType<
-  typeof useGetPostBySlugQuery
->;
-export type GetPostBySlugLazyQueryHookResult = ReturnType<
-  typeof useGetPostBySlugLazyQuery
->;
-export type GetPostBySlugQueryResult = Apollo.QueryResult<
-  GetPostBySlugQuery,
-  GetPostBySlugQueryVariables
+
+export function useGetIndexPageDataLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<GetIndexPageDataQuery, GetIndexPageDataQueryVariables>
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useLazyQuery<GetIndexPageDataQuery, GetIndexPageDataQueryVariables>(
+    GetIndexPageDataDocument,
+    options
+  );
+}
+
+export type GetIndexPageDataQueryHookResult = ReturnType<typeof useGetIndexPageDataQuery>;
+export type GetIndexPageDataLazyQueryHookResult = ReturnType<typeof useGetIndexPageDataLazyQuery>;
+export type GetIndexPageDataQueryResult = Apollo.QueryResult<
+  GetIndexPageDataQuery,
+  GetIndexPageDataQueryVariables
 >;

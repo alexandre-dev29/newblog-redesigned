@@ -28,18 +28,12 @@ export async function getServerPageGetOneAuthor(
     },
   };
 }
-export type PageGetOneAuthorComp = React.FC<{
-  data?: Types.GetOneAuthorQuery;
-  error?: Apollo.ApolloError;
-}>;
+export type PageGetOneAuthorComp = React.FC<{ data?: Types.GetOneAuthorQuery; error?: Apollo.ApolloError }>;
 export const withPageGetOneAuthor =
   (
     optionsFunc?: (
       router: NextRouter
-    ) => QueryHookOptions<
-      Types.GetOneAuthorQuery,
-      Types.GetOneAuthorQueryVariables
-    >
+    ) => QueryHookOptions<Types.GetOneAuthorQuery, Types.GetOneAuthorQueryVariables>
   ) =>
   (WrappedComponent: PageGetOneAuthorComp): NextPage =>
   (props) => {
@@ -53,10 +47,7 @@ export const ssrGetOneAuthor = {
   withPage: withPageGetOneAuthor,
 };
 export async function getServerPageGetAllCategories(
-  options: Omit<
-    Apollo.QueryOptions<Types.GetAllCategoriesQueryVariables>,
-    "query"
-  >,
+  options: Omit<Apollo.QueryOptions<Types.GetAllCategoriesQueryVariables>, "query">,
   ctx: ApolloClientContext
 ) {
   const apolloClient = getApolloClient(ctx);
@@ -84,19 +75,13 @@ export const withPageGetAllCategories =
   (
     optionsFunc?: (
       router: NextRouter
-    ) => QueryHookOptions<
-      Types.GetAllCategoriesQuery,
-      Types.GetAllCategoriesQueryVariables
-    >
+    ) => QueryHookOptions<Types.GetAllCategoriesQuery, Types.GetAllCategoriesQueryVariables>
   ) =>
   (WrappedComponent: PageGetAllCategoriesComp): NextPage =>
   (props) => {
     const router = useRouter();
     const options = optionsFunc ? optionsFunc(router) : {};
-    const { data, error } = useQuery(
-      Operations.GetAllCategoriesDocument,
-      options
-    );
+    const { data, error } = useQuery(Operations.GetAllCategoriesDocument, options);
     return <WrappedComponent {...props} data={data} error={error} />;
   };
 export const ssrGetAllCategories = {
@@ -104,10 +89,7 @@ export const ssrGetAllCategories = {
   withPage: withPageGetAllCategories,
 };
 export async function getServerPageGetCategoryByTitle(
-  options: Omit<
-    Apollo.QueryOptions<Types.GetCategoryByTitleQueryVariables>,
-    "query"
-  >,
+  options: Omit<Apollo.QueryOptions<Types.GetCategoryByTitleQueryVariables>, "query">,
   ctx: ApolloClientContext
 ) {
   const apolloClient = getApolloClient(ctx);
@@ -135,19 +117,13 @@ export const withPageGetCategoryByTitle =
   (
     optionsFunc?: (
       router: NextRouter
-    ) => QueryHookOptions<
-      Types.GetCategoryByTitleQuery,
-      Types.GetCategoryByTitleQueryVariables
-    >
+    ) => QueryHookOptions<Types.GetCategoryByTitleQuery, Types.GetCategoryByTitleQueryVariables>
   ) =>
   (WrappedComponent: PageGetCategoryByTitleComp): NextPage =>
   (props) => {
     const router = useRouter();
     const options = optionsFunc ? optionsFunc(router) : {};
-    const { data, error } = useQuery(
-      Operations.GetCategoryByTitleDocument,
-      options
-    );
+    const { data, error } = useQuery(Operations.GetCategoryByTitleDocument, options);
     return <WrappedComponent {...props} data={data} error={error} />;
   };
 export const ssrGetCategoryByTitle = {
@@ -155,10 +131,7 @@ export const ssrGetCategoryByTitle = {
   withPage: withPageGetCategoryByTitle,
 };
 export async function getServerPageGetOneCategory(
-  options: Omit<
-    Apollo.QueryOptions<Types.GetOneCategoryQueryVariables>,
-    "query"
-  >,
+  options: Omit<Apollo.QueryOptions<Types.GetOneCategoryQueryVariables>, "query">,
   ctx: ApolloClientContext
 ) {
   const apolloClient = getApolloClient(ctx);
@@ -186,19 +159,13 @@ export const withPageGetOneCategory =
   (
     optionsFunc?: (
       router: NextRouter
-    ) => QueryHookOptions<
-      Types.GetOneCategoryQuery,
-      Types.GetOneCategoryQueryVariables
-    >
+    ) => QueryHookOptions<Types.GetOneCategoryQuery, Types.GetOneCategoryQueryVariables>
   ) =>
   (WrappedComponent: PageGetOneCategoryComp): NextPage =>
   (props) => {
     const router = useRouter();
     const options = optionsFunc ? optionsFunc(router) : {};
-    const { data, error } = useQuery(
-      Operations.GetOneCategoryDocument,
-      options
-    );
+    const { data, error } = useQuery(Operations.GetOneCategoryDocument, options);
     return <WrappedComponent {...props} data={data} error={error} />;
   };
 export const ssrGetOneCategory = {
@@ -206,10 +173,7 @@ export const ssrGetOneCategory = {
   withPage: withPageGetOneCategory,
 };
 export async function getServerPageGetAllFeaturedPost(
-  options: Omit<
-    Apollo.QueryOptions<Types.GetAllFeaturedPostQueryVariables>,
-    "query"
-  >,
+  options: Omit<Apollo.QueryOptions<Types.GetAllFeaturedPostQueryVariables>, "query">,
   ctx: ApolloClientContext
 ) {
   const apolloClient = getApolloClient(ctx);
@@ -229,7 +193,6 @@ export async function getServerPageGetAllFeaturedPost(
     },
   };
 }
-
 export type PageGetAllFeaturedPostComp = React.FC<{
   data?: Types.GetAllFeaturedPostQuery;
   error?: Apollo.ApolloError;
@@ -238,26 +201,19 @@ export const withPageGetAllFeaturedPost =
   (
     optionsFunc?: (
       router: NextRouter
-    ) => QueryHookOptions<
-      Types.GetAllFeaturedPostQuery,
-      Types.GetAllFeaturedPostQueryVariables
-    >
+    ) => QueryHookOptions<Types.GetAllFeaturedPostQuery, Types.GetAllFeaturedPostQueryVariables>
   ) =>
   (WrappedComponent: PageGetAllFeaturedPostComp): NextPage =>
   (props) => {
     const router = useRouter();
     const options = optionsFunc ? optionsFunc(router) : {};
-    const { data, error } = useQuery(
-      Operations.GetAllFeaturedPostDocument,
-      options
-    );
+    const { data, error } = useQuery(Operations.GetAllFeaturedPostDocument, options);
     return <WrappedComponent {...props} data={data} error={error} />;
   };
 export const ssrGetAllFeaturedPost = {
   getServerPage: getServerPageGetAllFeaturedPost,
   withPage: withPageGetAllFeaturedPost,
 };
-
 export async function getServerPageGetAllPosts(
   options: Omit<Apollo.QueryOptions<Types.GetAllPostsQueryVariables>, "query">,
   ctx: ApolloClientContext
@@ -279,18 +235,13 @@ export async function getServerPageGetAllPosts(
     },
   };
 }
-export type PageGetAllPostsComp = React.FC<{
-  data?: Types.GetAllPostsQuery;
-  error?: Apollo.ApolloError;
-}>;
+
+export type PageGetAllPostsComp = React.FC<{ data?: Types.GetAllPostsQuery; error?: Apollo.ApolloError }>;
 export const withPageGetAllPosts =
   (
     optionsFunc?: (
       router: NextRouter
-    ) => QueryHookOptions<
-      Types.GetAllPostsQuery,
-      Types.GetAllPostsQueryVariables
-    >
+    ) => QueryHookOptions<Types.GetAllPostsQuery, Types.GetAllPostsQueryVariables>
   ) =>
   (WrappedComponent: PageGetAllPostsComp): NextPage =>
   (props) => {
@@ -324,10 +275,8 @@ export async function getServerPageGetOnePost(
     },
   };
 }
-export type PageGetOnePostComp = React.FC<{
-  data?: Types.GetOnePostQuery;
-  error?: Apollo.ApolloError;
-}>;
+
+export type PageGetOnePostComp = React.FC<{ data?: Types.GetOnePostQuery; error?: Apollo.ApolloError }>;
 export const withPageGetOnePost =
   (
     optionsFunc?: (
@@ -346,10 +295,7 @@ export const ssrGetOnePost = {
   withPage: withPageGetOnePost,
 };
 export async function getServerPageGetPostBySlug(
-  options: Omit<
-    Apollo.QueryOptions<Types.GetPostBySlugQueryVariables>,
-    "query"
-  >,
+  options: Omit<Apollo.QueryOptions<Types.GetPostBySlugQueryVariables>, "query">,
   ctx: ApolloClientContext
 ) {
   const apolloClient = getApolloClient(ctx);
@@ -369,18 +315,13 @@ export async function getServerPageGetPostBySlug(
     },
   };
 }
-export type PageGetPostBySlugComp = React.FC<{
-  data?: Types.GetPostBySlugQuery;
-  error?: Apollo.ApolloError;
-}>;
+
+export type PageGetPostBySlugComp = React.FC<{ data?: Types.GetPostBySlugQuery; error?: Apollo.ApolloError }>;
 export const withPageGetPostBySlug =
   (
     optionsFunc?: (
       router: NextRouter
-    ) => QueryHookOptions<
-      Types.GetPostBySlugQuery,
-      Types.GetPostBySlugQueryVariables
-    >
+    ) => QueryHookOptions<Types.GetPostBySlugQuery, Types.GetPostBySlugQueryVariables>
   ) =>
   (WrappedComponent: PageGetPostBySlugComp): NextPage =>
   (props) => {
@@ -392,4 +333,48 @@ export const withPageGetPostBySlug =
 export const ssrGetPostBySlug = {
   getServerPage: getServerPageGetPostBySlug,
   withPage: withPageGetPostBySlug,
+};
+
+export async function getServerPageGetIndexData(
+  options: Omit<Apollo.QueryOptions<Types.GetIndexPageDataQueryVariables>, "query">,
+  ctx: ApolloClientContext
+) {
+  const apolloClient = getApolloClient(ctx);
+
+  const data = await apolloClient.query<Types.GetIndexPageDataQuery>({
+    ...options,
+    query: Operations.GetIndexPageDataDocument,
+  });
+
+  const apolloState = apolloClient.cache.extract();
+
+  return {
+    props: {
+      apolloState: apolloState,
+      data: data?.data,
+      error: data?.error ?? data?.errors ?? null,
+    },
+  };
+}
+
+export type PageGetIndexDataComp = React.FC<{
+  data?: Types.GetIndexPageDataQuery;
+  error?: Apollo.ApolloError;
+}>;
+export const withPageGetIndexData =
+  (
+    optionsFunc?: (
+      router: NextRouter
+    ) => QueryHookOptions<Types.GetIndexPageDataQuery, Types.GetIndexPageDataQueryVariables>
+  ) =>
+  (WrappedComponent: PageGetIndexDataComp): NextPage =>
+  (props) => {
+    const router = useRouter();
+    const options = optionsFunc ? optionsFunc(router) : {};
+    const { data, error } = useQuery(Operations.GetIndexPageDataDocument, options);
+    return <WrappedComponent {...props} data={data} error={error} />;
+  };
+export const ssrGetIndexData = {
+  getServerPage: getServerPageGetIndexData,
+  withPage: withPageGetIndexData,
 };

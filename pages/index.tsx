@@ -1,18 +1,28 @@
-import type { NextPage } from "next";
-import { Text } from "@nextui-org/react";
+import type { GetServerSideProps } from "next";
+import { PageGetIndexDataComp, ssrGetIndexData } from "../Types/generated/graphqlPages";
+import { withApollo } from "../config/graphql/withApollo";
+import FeaturedArticleComponent from "../components/FeaturedArticleComponent";
 
-const Home: NextPage = () => {
+const Home: PageGetIndexDataComp = ({ data, error }) => {
+  const { description, title, author, tags, slug, mainImage, categories, viewCount, _id, _createdAt }: any =
+    data?.allFeaturedArticle[0].featured;
   return (
-    <Text
-      h2
-      css={{
-        textGradient: "45deg, $purple600 10%, $pink600 100%",
-        textAlign: "center",
-      }}
-    >
-      How to create a blog from scratch
-    </Text>
+    <FeaturedArticleComponent
+      description={description}
+      title={title}
+      author={author}
+      slug={slug}
+      categories={categories}
+      viewCount={viewCount}
+      _id={_id}
+      _createdAt={_createdAt}
+      mainImage={mainImage}
+      tags={tags}
+    />
   );
 };
 
-export default Home;
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  return await ssrGetIndexData.getServerPage({}, { cookies: undefined });
+};
+export default withApollo(ssrGetIndexData.withPage(() => ({}))(Home));

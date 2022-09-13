@@ -11,7 +11,18 @@ query GetOnePost($id: ID!){
 }
 
 query GetPostBySlug($slug: String){
-    allPost(where: {slug: {current: {eq: $slug}}}, limit: 0){
+    allPost(where: {slug: {current: {eq: $slug}}}, limit: 1){
+        ...PostFragment
+    }
+}
+
+query GetIndexPageData{
+    allFeaturedArticle{
+        featured {
+            ...PostFragment
+        }
+    }
+    allPost{
         ...PostFragment
     }
 }
