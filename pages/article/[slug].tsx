@@ -34,6 +34,7 @@ const PostPage = ({ mdxSource, dataPage }: mixedReturnedServerData) => {
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const { props } = await ssrGetPostBySlug.getServerPage(
     { variables: { slug: params?.slug?.toString() || "" } },
+    // @ts-ignore
     { cookies: undefined }
   );
 

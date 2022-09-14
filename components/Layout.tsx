@@ -21,8 +21,9 @@ export default function LayoutComponent({ children }: ILayoutComponent) {
         iconOn={<SunLight />}
         iconOff={<HalfMoon />}
         css={{
-          position: "absolute",
+          position: "fixed",
           bottom: "45%",
+          zIndex: 500,
           right: 0,
           "@xsMin": {
             display: "none",
@@ -44,7 +45,7 @@ export default function LayoutComponent({ children }: ILayoutComponent) {
             padding: "2rem 12rem",
           },
           "@lgMin": {
-            padding: "2rem 20rem",
+            padding: "2rem 14rem",
           },
           "@xlMin": {
             padding: "2rem 25rem",

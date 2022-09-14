@@ -1,6 +1,7 @@
 import { Avatar, Dropdown, Input, Navbar, Switch, Text, useTheme } from "@nextui-org/react";
 import { useTheme as useNextTheme } from "next-themes";
 import { HalfMoon, Search, SunLight } from "iconoir-react";
+import Link from "next/link";
 
 interface INavBarProps {}
 
@@ -10,9 +11,16 @@ export default function NavBarComponent(props: INavBarProps) {
   return (
     <Navbar isBordered variant="sticky" shouldHideOnScroll={true}>
       <Navbar.Brand css={{ mr: "$4" }}>
-        <Text size={35} css={{ textGradient: "45deg, $purple600 10%, $pink600 100%" }} weight="bold">
-          AM
-        </Text>
+        <Link href={"/"}>
+          <Text
+            size={35}
+            css={{ textGradient: "45deg, $purple600 10%, $pink600 100%" }}
+            weight="bold"
+            style={{ cursor: "pointer" }}
+          >
+            AM
+          </Text>
+        </Link>
         <Text b color="inherit" css={{ mr: "$11", ml: "$8" }} hideIn="xs">
           Axel Mwenze Blog
         </Text>
