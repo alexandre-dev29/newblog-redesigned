@@ -7,13 +7,29 @@ import Router from "next/router";
 import LayoutComponent from "../components/Layout";
 import { IconoirProvider } from "iconoir-react";
 import NProgress from "nprogress"; //nprogress module
-import "nprogress/nprogress.css"; //styles of nprogress
+import "nprogress/nprogress.css";
 
 //Route Events.
 Router.events.on("routeChangeStart", () => NProgress.start());
 Router.events.on("routeChangeComplete", () => NProgress.done());
 Router.events.on("routeChangeError", () => NProgress.done());
 
+const actions = [
+  {
+    id: "blog",
+    name: "Blog",
+    shortcut: ["b"],
+    keywords: "writing words",
+    perform: () => (window.location.pathname = "blog"),
+  },
+  {
+    id: "contact",
+    name: "Contact",
+    shortcut: ["c"],
+    keywords: "email",
+    perform: () => (window.location.pathname = "contact"),
+  },
+];
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <NextThemesProvider
