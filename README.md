@@ -25,10 +25,53 @@ To learn more about Next.js, take a look at the following resources:
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions
+are welcome!
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The easiest way to deploy your Next.js app is to use
+the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme)
+from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+### some code blocks
+
+```jsx
+export const getServerSideProps: GetServerSideProps = async ({params}) => {
+    const {props} = await ssrGetPostBySlug.getServerPage(
+        {variables: {slug: params?.slug?.toString() || ""}},
+        {cookies: undefined}
+    );
+
+    const selectedArticle = props.data?.allPost[0];
+    const {content} = matter(`${selectedArticle.content}`);
+
+    const mdxSource = await serialize(content, {
+        mdxOptions: {
+            rehypePlugins: [rehypeSlug, [rehypeAutolinkHeadings, {behavior: "wrap"}], rehypeHighlight],
+        },
+    });
+
+    return {
+        props: {
+            mdxSource,
+            dataPage: selectedArticle,
+        },
+    };
+};
+
+```
+
+```css
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap');
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+```
+

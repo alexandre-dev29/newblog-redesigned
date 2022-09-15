@@ -1,0 +1,10 @@
+query GetAllFeaturedPost($limit: Int,$offset: Int,$sort: [FeaturedArticleSorting!],$where: FeaturedArticleFilter){
+    allFeaturedArticle(where: $where, limit: $limit, sort: $sort, offset: $offset){
+        _id
+        _createdAt
+        _key
+        featured {
+            ...PostFragment
+        }
+    }
+}

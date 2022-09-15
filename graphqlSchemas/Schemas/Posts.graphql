@@ -1,0 +1,63 @@
+query GetAllPosts($limit: Int,$offset: Int,$sort: [PostSorting!],$where: PostFilter){
+    allPost(limit: $limit, where: $where, offset: $offset, sort: $sort){
+        ...PostFragment
+    }
+}
+
+query GetOnePost($id: ID!){
+    Post(id: $id){
+        ...PostFragment
+    }
+}
+
+query GetPostBySlug($slug: String){
+    allPost(where: {slug: {current: {eq: $slug}}}, limit: 1){
+        ...PostFragment
+    }
+}
+
+query GetIndexPageData{
+    allFeaturedArticle{
+        featured {
+            ...PostFragment
+        }
+    }
+    allPost{
+        ...PostFragment
+    }
+}
+
+
+fragment PostFragment on Post{
+    _id
+    _createdAt
+    publishedAt
+    title
+    description
+    slug {
+        current
+    }
+    tags
+    mainImage {
+        ...ImageFragment
+    }
+    author {
+        name
+        image {
+            ...ImageFragment
+        }
+        slug {
+            current
+        }
+
+    }
+    slug {
+        current
+    }
+    content
+    viewCount
+    categories {
+        title
+        description
+    }
+}
