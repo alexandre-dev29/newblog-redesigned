@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
 
-const FeaturedArticleComponent = ({ title, description, mainImage, slug }: Post) => {
+export const FeaturedArticleComponent = ({ title, description, mainImage, slug }: Post) => {
   const router = useRouter();
   return (
     <Card css={{ w: "100%", h: "400px", borderRadius: "$xs" }}>
@@ -59,5 +59,3 @@ const FeaturedArticleComponent = ({ title, description, mainImage, slug }: Post)
     </Card>
   );
 };
-
-export default FeaturedArticleComponent;

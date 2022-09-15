@@ -3,7 +3,7 @@ import Image from "next/image";
 import { EyeEmpty } from "iconoir-react";
 import { useRouter } from "next/router";
 
-export default function ArticleCard({
+export function ArticleCard({
   img,
   price,
   title,

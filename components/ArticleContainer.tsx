@@ -5,7 +5,7 @@ import ArticleCard from "./ArticleCard";
 export type ArticleContainerPropsType = {
   listOfData: { title: string; price: string; img: string; slug: string }[];
 };
-export default function ArticleContainer(props: ArticleContainerPropsType) {
+export function ArticleContainer(props: ArticleContainerPropsType) {
   return (
     <Grid.Container gap={2} justify="flex-start">
       {props.listOfData.map(({ img, price, title, slug }, index) => (

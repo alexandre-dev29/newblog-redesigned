@@ -1,8 +1,7 @@
 import type { GetServerSideProps } from "next";
 import { PageGetIndexDataComp, ssrGetIndexData } from "../Types/generated/graphqlPages";
 import { withApollo } from "../config/graphql/withApollo";
-import FeaturedArticleComponent from "../components/FeaturedArticleComponent";
-import ArticleContainer from "../components/ArticleContainer";
+import { ArticleContainer, FeaturedArticleComponent } from "../components";
 
 const list = [
   {
