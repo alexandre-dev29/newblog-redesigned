@@ -1,12 +1,10 @@
 import { Card, Col, Container, Row, Text } from "@nextui-org/react";
 import { Post } from "../Types/generated/graphqlTypes";
 import { imageFromSource } from "../utils";
-import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
 
 export const FeaturedArticleComponent = ({ title, description, mainImage, slug }: Post) => {
-  const router = useRouter();
   return (
     <Card css={{ w: "100%", h: "400px", borderRadius: "$xs" }}>
       <Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>

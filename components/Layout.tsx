@@ -3,6 +3,7 @@ import NavBarComponent from "./NavBar";
 import { Container, Switch, useTheme } from "@nextui-org/react";
 import { useTheme as useNextTheme } from "next-themes";
 import { HalfMoon, SunLight } from "iconoir-react";
+import Footer from "./Footer";
 
 interface ILayoutComponent {
   children: any;
@@ -39,13 +40,10 @@ export default function LayoutComponent({ children }: ILayoutComponent) {
             padding: "2rem 2rem",
           },
           "@xsMin": {
-            padding: "2rem 8rem",
-          },
-          "@mdMin": {
-            padding: "2rem 12rem",
+            padding: "2rem 4rem",
           },
           "@lgMin": {
-            padding: "2rem 14rem",
+            padding: "2rem 10rem",
           },
           "@xlMin": {
             padding: "2rem 25rem",
@@ -54,6 +52,7 @@ export default function LayoutComponent({ children }: ILayoutComponent) {
       >
         <div>{children}</div>
       </Container>
+      <Footer />
     </div>
   );
 }

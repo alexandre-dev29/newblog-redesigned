@@ -1,10 +1,4 @@
-import {
-  ApolloClient,
-  from,
-  HttpLink,
-  InMemoryCache,
-  NormalizedCacheObject,
-} from "@apollo/client";
+import { ApolloClient, from, HttpLink, InMemoryCache, NormalizedCacheObject } from "@apollo/client";
 import { IncomingMessage } from "http";
 import { NextApiRequestCookies } from "next/dist/server/api-utils";
 import { GraphqlErrorState } from "../../utils";
@@ -20,17 +14,17 @@ export const ErrorLinkHandler = () => {
   const { setState } = GraphqlErrorState;
 
   return onError(({ graphQLErrors, networkError }) => {
+    console.log(graphQLErrors);
     if (graphQLErrors) {
       setState({ messagesError: graphQLErrors.map((a) => a.message) });
       setState({ errorType: ErrorTypeGraphQl.Request });
       setState({ isOpen: true });
     }
     if (networkError) {
+      console.log(networkError);
       setState({ errorType: ErrorTypeGraphQl.Network });
       setState({
-        messagesError: [
-          "Connection Issue Please check Your internet connection and try again",
-        ],
+        messagesError: ["Connection Issue Please check Your internet connection and try again"],
       });
       setState({ isOpen: true });
     }
@@ -51,10 +45,7 @@ export const httpLinkApp = new HttpLink({
   uri: process.env.NEXT_PUBLIC_API_URL,
 });
 
-export const getApolloClient = (
-  ctx?: ApolloClientContext,
-  initialState?: NormalizedCacheObject
-) => {
+export const getApolloClient = (ctx?: ApolloClientContext, initialState?: NormalizedCacheObject) => {
   if (ctx && ctx.req) {
     const { req } = ctx;
   }

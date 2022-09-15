@@ -6,3 +6,4 @@ export * from "./Footer";
 export * from "./ArticleCard";
 export * from "./ArticleContainer";
 export * from "./FeaturedArticleComponent";
+export * from "./ForMarkdown";

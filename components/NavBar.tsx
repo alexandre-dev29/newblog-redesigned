@@ -1,6 +1,6 @@
-import { Avatar, Dropdown, Input, Navbar, Switch, Text, useTheme } from "@nextui-org/react";
+import { Avatar, Col, Dropdown, Input, Navbar, Row, Switch, Text, useTheme } from "@nextui-org/react";
 import { useTheme as useNextTheme } from "next-themes";
-import { HalfMoon, Search, SunLight } from "iconoir-react";
+import { GitHub, HalfMoon, Search, SunLight } from "iconoir-react";
 import Link from "next/link";
 
 interface INavBarProps {}
@@ -80,6 +80,20 @@ export default function NavBarComponent(props: INavBarProps) {
                 <Text b color="inherit" aria-valuetext={"My Portfolio"}>
                   My Portfolio
                 </Text>
+              </Dropdown.Item>
+              <Dropdown.Item key="blogCode" withDivider textValue={"The Blog Code"}>
+                <Link href={"https://github.com/alexandre-dev29/newblog-redesigned"}>
+                  <Row justify={"center"}>
+                    <Col span={3}>
+                      <GitHub />
+                    </Col>
+                    <Col>
+                      <Text b color="inherit" aria-valuetext={"The Blog Code"}>
+                        Blog Code
+                      </Text>
+                    </Col>
+                  </Row>
+                </Link>
               </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>

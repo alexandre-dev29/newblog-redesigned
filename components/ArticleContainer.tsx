@@ -1,6 +1,6 @@
 import { Grid } from "@nextui-org/react";
 
-import ArticleCard from "./ArticleCard";
+import { ArticleCard } from "./ArticleCard";
 
 export type ArticleContainerPropsType = {
   listOfData: { title: string; price: string; img: string; slug: string }[];
@@ -10,7 +10,7 @@ export function ArticleContainer(props: ArticleContainerPropsType) {
     <Grid.Container gap={2} justify="flex-start">
       {props.listOfData.map(({ img, price, title, slug }, index) => (
         <Grid xs={12} sm={6} md={4} key={index}>
-          <ArticleCard title={title} price={price} img={img} slug={slug} />
+          <ArticleCard title={title} price={price} img={img} slug={slug} datePublished={"2022-05-04"} />
         </Grid>
       ))}
     </Grid.Container>
