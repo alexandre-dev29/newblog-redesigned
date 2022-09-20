@@ -16,6 +16,7 @@ import { EyeEmpty } from "iconoir-react";
 import rehypePrettyCode from "rehype-pretty-code";
 import GiscusComment from "../../components/GiscusComment";
 import { useRouter } from "next/router";
+import fs from "fs";
 
 interface mixedReturnedServerData {
   mdxSource: any;
@@ -105,9 +106,8 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   );
 
   const options = {
-    theme: {
-      dark: "one-dark-pro",
-    },
+    theme: JSON.parse(fs.readFileSync(require.resolve("../../styles/dark_code.json"), "utf-8")),
+
     onVisitLine(node: any) {
       if (node.children.length === 0) {
         node.children = [{ type: "text", value: " " }];
