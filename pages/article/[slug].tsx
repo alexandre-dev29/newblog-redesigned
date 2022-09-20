@@ -38,7 +38,7 @@ const PostPage = ({ mdxSource, dataPage }: mixedReturnedServerData) => {
     ),
     YouTubeComp,
     Image,
-    img: (props: any) => <Image {...props} layout="responsive" loading="lazy" />,
+    img: (props: any) => <Image {...props} height={450} width={800} layout="responsive" loading="lazy" />,
     Table,
   };
 

@@ -30,6 +30,11 @@ pre > code {
 
   background: transparent;
   font-family: 'Fira Code', monospace;
+
+}
+
+code > * {
+  font-size: 16px !important;
 }
 
 pre {

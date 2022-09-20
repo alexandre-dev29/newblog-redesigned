@@ -33,7 +33,7 @@ const actions = [
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <NextThemesProvider
-      defaultTheme={"system"}
+      defaultTheme={"dark"}
       attribute={"class"}
       value={{ light: LightTheme.className, dark: DarkTheme.className }}
     >
