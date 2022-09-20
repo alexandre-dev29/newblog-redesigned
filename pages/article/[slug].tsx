@@ -17,6 +17,7 @@ import rehypePrettyCode from "rehype-pretty-code";
 import GiscusComment from "../../components/GiscusComment";
 import { useRouter } from "next/router";
 import fs from "fs";
+import path from "path";
 
 interface mixedReturnedServerData {
   mdxSource: any;
@@ -105,8 +106,9 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
     { cookies: undefined }
   );
 
+  const publicPath = path.join(process.cwd());
   const options = {
-    theme: JSON.parse(fs.readFileSync(require.resolve("../dark_code.json"), "utf-8")),
+    theme: JSON.parse(fs.readFileSync(publicPath + "/public/dark_code.json", "utf-8")),
 
     onVisitLine(node: any) {
       if (node.children.length === 0) {
