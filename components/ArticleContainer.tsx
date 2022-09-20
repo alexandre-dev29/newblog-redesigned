@@ -1,16 +1,17 @@
 import { Grid } from "@nextui-org/react";
 
 import { ArticleCard } from "./ArticleCard";
+import { PostFragmentFragment } from "../Types/generated/graphqlTypes";
 
 export type ArticleContainerPropsType = {
-  listOfData: { title: string; price: string; img: string; slug: string }[];
+  listOfData: PostFragmentFragment[] | any;
 };
 export function ArticleContainer(props: ArticleContainerPropsType) {
   return (
     <Grid.Container gap={2} justify="flex-start">
-      {props.listOfData.map(({ img, price, title, slug }, index) => (
+      {props.listOfData.map((element: any, index: number) => (
         <Grid xs={12} sm={6} md={4} key={index}>
-          <ArticleCard title={title} price={price} img={img} slug={slug} datePublished={"2022-05-04"} />
+          <ArticleCard data={element} />
         </Grid>
       ))}
     </Grid.Container>

@@ -10,11 +10,12 @@ import { motion, useScroll } from "framer-motion";
 import { Col, Row, Table, Text } from "@nextui-org/react";
 import { ssrGetPostBySlug } from "../../Types/generated/graphqlPages";
 import { Post } from "../../Types/generated/graphqlTypes";
-import { YouTubeComp } from "../../components";
+import { SeoData, YouTubeComp } from "../../components";
 import Image from "next/image";
 import { EyeEmpty } from "iconoir-react";
 import rehypePrettyCode from "rehype-pretty-code";
 import GiscusComment from "../../components/GiscusComment";
+import { useRouter } from "next/router";
 
 interface mixedReturnedServerData {
   mdxSource: any;
@@ -42,11 +43,17 @@ const PostPage = ({ mdxSource, dataPage }: mixedReturnedServerData) => {
     img: (props: any) => <Image {...props} height={450} width={800} layout="responsive" loading="lazy" />,
     Table,
   };
-
+  const router = useRouter();
   return (
     <div>
       <motion.div className={"progress-bar"} style={{ scaleX: scrollYProgress }} />
-
+      <SeoData
+        pageTitle={`${dataPage.title}`}
+        description={`${dataPage.description}`}
+        imageUrl={`${dataPage.mainImage?.asset?.url}`}
+        keywords={dataPage.tags?.join(",")}
+        urlPath={router.asPath}
+      />
       <Text
         h2
         css={{
@@ -66,7 +73,9 @@ const PostPage = ({ mdxSource, dataPage }: mixedReturnedServerData) => {
         </Col>
         <Col>
           <Row justify={"flex-end"}>
-            <Text css={{ color: "$accents7", fontWeight: "$semibold", fontSize: "$sm", mr: "10px" }}>5</Text>
+            <Text css={{ color: "$accents7", fontWeight: "$semibold", fontSize: "$sm", mr: "10px" }}>
+              {dataPage.viewCount}
+            </Text>
             <EyeEmpty fontSize={25} color={"var(--nextui-colors-accents7)"} />
           </Row>
         </Col>
