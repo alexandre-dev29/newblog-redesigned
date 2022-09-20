@@ -106,7 +106,7 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   );
 
   const options = {
-    theme: JSON.parse(fs.readFileSync(require.resolve("../../styles/dark_code.json"), "utf-8")),
+    theme: JSON.parse(fs.readFileSync(require.resolve("../dark_code.json"), "utf-8")),
 
     onVisitLine(node: any) {
       if (node.children.length === 0) {
