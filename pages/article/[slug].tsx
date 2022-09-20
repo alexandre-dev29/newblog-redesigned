@@ -105,7 +105,7 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
     // @ts-ignore
     { cookies: undefined }
   );
-  const file = path.join(process.cwd(), "dark_code.json");
+  const file = path.join(process.cwd(), "styles", "dark_code.json");
 
   const options = {
     theme: JSON.parse(fs.readFileSync(file, "utf-8")),
