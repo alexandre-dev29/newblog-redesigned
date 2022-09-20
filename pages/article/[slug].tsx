@@ -3,16 +3,17 @@ import matter from "gray-matter";
 import { GetServerSideProps } from "next";
 import { MDXRemote } from "next-mdx-remote";
 import rehypeSlug from "rehype-slug";
-import rehypeHighlight from "rehype-highlight";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import remarkGfm from "remark-gfm";
 import "highlight.js/styles/atom-one-dark.css";
 import { motion, useScroll } from "framer-motion";
-import { Col, Row, Text } from "@nextui-org/react";
+import { Col, Row, Table, Text } from "@nextui-org/react";
 import { ssrGetPostBySlug } from "../../Types/generated/graphqlPages";
 import { Post } from "../../Types/generated/graphqlTypes";
 import { YouTubeComp } from "../../components";
 import Image from "next/image";
 import { EyeEmpty } from "iconoir-react";
+import rehypePrettyCode from "rehype-pretty-code";
 
 interface mixedReturnedServerData {
   mdxSource: any;
@@ -21,6 +22,25 @@ interface mixedReturnedServerData {
 
 const PostPage = ({ mdxSource, dataPage }: mixedReturnedServerData) => {
   const { scrollYProgress } = useScroll();
+  const allComponent = {
+    Text,
+    h2: (props: any) => (
+      <Text
+        h2
+        css={{
+          textGradient: "45deg, $purple600 10%, $pink600 100%",
+          "@xsMax": { fontSize: "$2xl" },
+          "@smMin": { fontSize: "$3xl" },
+          "@mdMin": { fontSize: "$4xl" },
+        }}
+        {...props}
+      />
+    ),
+    YouTubeComp,
+    Image,
+    img: (props: any) => <Image {...props} layout="responsive" loading="lazy" />,
+    Table,
+  };
 
   return (
     <div>
@@ -51,7 +71,7 @@ const PostPage = ({ mdxSource, dataPage }: mixedReturnedServerData) => {
         </Col>
       </Row>
       <article>
-        <MDXRemote {...mdxSource} components={{ Text, YouTubeComp, Image }} />
+        <MDXRemote {...mdxSource} components={allComponent} />
       </article>
     </div>
   );
@@ -64,12 +84,37 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
     { cookies: undefined }
   );
 
+  const options = {
+    // Use one of Shiki's packaged themes
+    theme: "one-dark-pro",
+
+    onVisitLine(node: any) {
+      // Prevent lines from collapsing in `display: grid` mode, and
+      // allow empty lines to be copy/pasted
+      if (node.children.length === 0) {
+        node.children = [{ type: "text", value: " " }];
+      }
+    },
+    // Feel free to add classNames that suit your docs
+    onVisitHighlightedLine(node: any) {
+      node.properties.className.push("highlighted");
+    },
+    onVisitHighlightedWord(node: any) {
+      node.properties.className = ["word"];
+    },
+  };
+
   const selectedArticle = props.data?.allPost[0];
   const { content } = matter(`${selectedArticle.content}`);
 
   const mdxSource = await serialize(content, {
     mdxOptions: {
-      rehypePlugins: [rehypeSlug, [rehypeAutolinkHeadings, { behavior: "wrap" }], rehypeHighlight],
+      rehypePlugins: [
+        rehypeSlug,
+        [rehypeAutolinkHeadings, { behavior: "wrap" }],
+        [rehypePrettyCode, options],
+      ],
+      remarkPlugins: [remarkGfm],
     },
   });
 
