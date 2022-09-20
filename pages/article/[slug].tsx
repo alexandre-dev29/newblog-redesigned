@@ -4,6 +4,8 @@ import { GetServerSideProps } from "next";
 import { MDXRemote } from "next-mdx-remote";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import rehypeCodeTitles from "rehype-code-titles";
+import rehypeHighlight from "rehype-highlight";
 import remarkGfm from "remark-gfm";
 import "highlight.js/styles/atom-one-dark.css";
 import { motion, useScroll } from "framer-motion";
@@ -13,11 +15,8 @@ import { Post } from "../../Types/generated/graphqlTypes";
 import { SeoData, YouTubeComp } from "../../components";
 import Image from "next/image";
 import { EyeEmpty } from "iconoir-react";
-import rehypePrettyCode from "rehype-pretty-code";
 import GiscusComment from "../../components/GiscusComment";
 import { useRouter } from "next/router";
-import fs from "fs";
-import path from "path";
 import Script from "next/script";
 
 interface mixedReturnedServerData {
@@ -108,33 +107,16 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
     // @ts-ignore
     { cookies: undefined }
   );
-  const file = path.join(process.cwd(), "styles", "dark_code.json");
-
-  const options = {
-    theme: JSON.parse(fs.readFileSync(file, "utf-8")),
-
-    onVisitLine(node: any) {
-      if (node.children.length === 0) {
-        node.children = [{ type: "text", value: " " }];
-      }
-    },
-    onVisitHighlightedLine(node: any) {
-      node.properties.className.push("highlighted");
-    },
-    onVisitHighlightedWord(node: any) {
-      node.properties.className = ["word"];
-    },
-  };
-
   const selectedArticle = props.data?.allPost[0];
   const { content } = matter(`${selectedArticle.content}`);
 
   const mdxSource = await serialize(content, {
     mdxOptions: {
       rehypePlugins: [
+        rehypeCodeTitles,
         rehypeSlug,
         [rehypeAutolinkHeadings, { behavior: "wrap" }],
-        [rehypePrettyCode, options],
+        rehypeHighlight,
       ],
       remarkPlugins: [remarkGfm],
     },

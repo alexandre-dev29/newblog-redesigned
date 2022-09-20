@@ -39,11 +39,15 @@ code > * {
 
 pre {
   padding: 0 !important;
+  margin-top: 0 !important;
+  border-radius: 0 0 10px 10px !important;
 }
 
-div[data-rehype-pretty-code-title] {
+.rehype-code-title {
   background: var(--nextui-colors-blue500);
   padding: 0.2rem 2rem;
+  border-top-left-radius: 10px !important;
+  border-top-right-radius: 10px !important;
 }
 
 .youtube_container {
@@ -77,6 +81,8 @@ h3 {
 
 code {
   counter-reset: line;
+  background: var(--nextui-colors-codeBackGround) !important;
+  border-radius: 0 !important;
 }
 
 code > .line::before {

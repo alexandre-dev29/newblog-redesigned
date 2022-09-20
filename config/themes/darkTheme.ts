@@ -6,6 +6,7 @@ export const DarkTheme = createTheme({
     colors: {
       selection: "$blue200",
       link: "$cyan500",
+      codeBackGround: "$gray50",
     },
     fonts: {
       sans: "Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;",

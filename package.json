@@ -34,11 +34,11 @@
     "react-hot-toast": "^2.3.0",
     "react-share": "^4.4.0",
     "rehype-autolink-headings": "^6.1.1",
+    "rehype-code-titles": "^1.1.0",
     "rehype-highlight": "^5.0.2",
     "rehype-pretty-code": "^0.3.2",
     "rehype-slug": "^5.0.1",
     "remark-gfm": "^3.0.1",
-    "shiki": "^0.11.1",
     "zustand": "^4.1.1"
   },
   "devDependencies": {
