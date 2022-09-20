@@ -14,6 +14,7 @@ import { YouTubeComp } from "../../components";
 import Image from "next/image";
 import { EyeEmpty } from "iconoir-react";
 import rehypePrettyCode from "rehype-pretty-code";
+import GiscusComment from "../../components/GiscusComment";
 
 interface mixedReturnedServerData {
   mdxSource: any;
@@ -73,6 +74,9 @@ const PostPage = ({ mdxSource, dataPage }: mixedReturnedServerData) => {
       <article>
         <MDXRemote {...mdxSource} components={allComponent} />
       </article>
+      <section style={{ marginTop: "4rem" }}>
+        <GiscusComment />
+      </section>
     </div>
   );
 };
@@ -85,17 +89,12 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   );
 
   const options = {
-    // Use one of Shiki's packaged themes
     theme: "one-dark-pro",
-
     onVisitLine(node: any) {
-      // Prevent lines from collapsing in `display: grid` mode, and
-      // allow empty lines to be copy/pasted
       if (node.children.length === 0) {
         node.children = [{ type: "text", value: " " }];
       }
     },
-    // Feel free to add classNames that suit your docs
     onVisitHighlightedLine(node: any) {
       node.properties.className.push("highlighted");
     },

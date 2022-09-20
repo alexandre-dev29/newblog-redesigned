@@ -7,3 +7,4 @@ export * from "./ArticleCard";
 export * from "./ArticleContainer";
 export * from "./FeaturedArticleComponent";
 export * from "./ForMarkdown";
+export * from "./GiscusComment";

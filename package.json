@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.6.9",
+    "@giscus/react": "^2.2.0",
     "@nextui-org/react": "^1.0.0-beta.10",
     "@sanity/client": "^3.4.1",
     "@sanity/image-url": "^1.0.1",
