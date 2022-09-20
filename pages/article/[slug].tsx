@@ -18,6 +18,7 @@ import GiscusComment from "../../components/GiscusComment";
 import { useRouter } from "next/router";
 import fs from "fs";
 import path from "path";
+import { log } from "next-axiom";
 
 interface mixedReturnedServerData {
   mdxSource: any;
@@ -105,10 +106,10 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
     // @ts-ignore
     { cookies: undefined }
   );
-
   const publicPath = path.join(process.cwd());
+  log.debug(publicPath + "/dark_code.json");
   const options = {
-    theme: JSON.parse(fs.readFileSync(publicPath + "/public/dark_code.json", "utf-8")),
+    theme: JSON.parse(fs.readFileSync(require.resolve(publicPath + "/dark_code.json"), "utf-8")),
 
     onVisitLine(node: any) {
       if (node.children.length === 0) {
