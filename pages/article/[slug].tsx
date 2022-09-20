@@ -18,6 +18,7 @@ import GiscusComment from "../../components/GiscusComment";
 import { useRouter } from "next/router";
 import fs from "fs";
 import path from "path";
+import Script from "next/script";
 
 interface mixedReturnedServerData {
   mdxSource: any;
@@ -48,6 +49,8 @@ const PostPage = ({ mdxSource, dataPage }: mixedReturnedServerData) => {
   const router = useRouter();
   return (
     <div>
+      <Script src="https://unpkg.com/shiki"></Script>
+
       <motion.div className={"progress-bar"} style={{ scaleX: scrollYProgress }} />
       <SeoData
         pageTitle={`${dataPage.title}`}
