@@ -6,6 +6,7 @@ export const LightTheme = createTheme({
     colors: {
       selection: "$blue200",
       link: "$blue800",
+      background: "#F5F5F5",
     },
     fonts: {
       sans: "Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;",

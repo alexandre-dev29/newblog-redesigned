@@ -28,7 +28,22 @@ code:hover {
 
 pre > code {
 
+  background: transparent;
   font-family: 'Fira Code', monospace;
+
+}
+
+code > * {
+  font-size: 16px !important;
+}
+
+pre {
+  padding: 0 !important;
+}
+
+div[data-rehype-pretty-code-title] {
+  background: var(--nextui-colors-blue500);
+  padding: 0.2rem 2rem;
 }
 
 .youtube_container {
@@ -48,10 +63,34 @@ pre > code {
   border: 0;
 }
 
+.highlighted {
+  background-color: var(--nextui-colors-blue100);
+}
+
 h2 {
   margin: 1.5rem 0 !important;
 }
 
 h3 {
   margin: 1.5rem 0 !important;
+}
+
+code {
+  counter-reset: line;
+}
+
+code > .line::before {
+  counter-increment: line;
+  content: counter(line);
+
+  /* Other styling */
+  display: inline-block;
+  width: 1rem;
+  margin-right: 1rem;
+  text-align: right;
+  color: gray;
+}
+
+td {
+  color: var(--mextui-colors-accent200);
 }
