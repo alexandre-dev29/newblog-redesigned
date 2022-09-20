@@ -1,6 +1,6 @@
-import { Avatar, Col, Dropdown, Input, Navbar, Row, Switch, Text, useTheme } from "@nextui-org/react";
+import { Avatar, Col, Dropdown, Navbar, Row, Switch, Text, useTheme } from "@nextui-org/react";
 import { useTheme as useNextTheme } from "next-themes";
-import { GitHub, HalfMoon, Search, SunLight } from "iconoir-react";
+import { GitHub, HalfMoon, SunLight } from "iconoir-react";
 import Link from "next/link";
 
 interface INavBarProps {}
@@ -26,24 +26,24 @@ export default function NavBarComponent(props: INavBarProps) {
         </Text>
         <Navbar.Content hideIn="xs" variant="highlight"></Navbar.Content>
       </Navbar.Brand>
-      <Navbar.Content css={{ "@xsMax": { w: "100%", jc: "space-between" } }}>
-        <Navbar.Item css={{ "@xsMax": { w: "100%", jc: "center" } }} id={"5"}>
-          <Input
-            aria-label={"search"}
-            id={"currentSearchInput"}
-            clearable
-            contentLeft={<Search color={"var(--nextui-colors-accents6)"} />}
-            contentLeftStyling={false}
-            css={{
-              w: "100%",
-              "@xsMax": {
-                mw: "300px",
-              },
-              "& .nextui-input-content--left": { h: "100%", ml: "$4", dflex: "center" },
-            }}
-            placeholder="Search..."
-          />
-        </Navbar.Item>
+      <Navbar.Content css={{ "@xsMax": { w: "100%", jc: "flex-end" } }}>
+        {/*<Navbar.Item css={{ "@xsMax": { w: "100%", jc: "center" } }} id={"5"}>*/}
+        {/*  <Input*/}
+        {/*    aria-label={"search"}*/}
+        {/*    id={"currentSearchInput"}*/}
+        {/*    clearable*/}
+        {/*    contentLeft={<Search color={"var(--nextui-colors-accents6)"} />}*/}
+        {/*    contentLeftStyling={false}*/}
+        {/*    css={{*/}
+        {/*      w: "100%",*/}
+        {/*      "@xsMax": {*/}
+        {/*        mw: "300px",*/}
+        {/*      },*/}
+        {/*      "& .nextui-input-content--left": { h: "100%", ml: "$4", dflex: "center" },*/}
+        {/*    }}*/}
+        {/*    placeholder="Search..."*/}
+        {/*  />*/}
+        {/*</Navbar.Item>*/}
         <Navbar.Item css={{ "@xsMax": { display: "none" } }} id={"6"}>
           <Switch
             checked={!isDark}

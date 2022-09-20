@@ -4,15 +4,6 @@ import { withApollo } from "../config/graphql/withApollo";
 import { ArticleContainer, FeaturedArticleComponent } from "../components";
 import Head from "next/head";
 
-const list = [
-  {
-    title: "HOW TO CREATE A BLOG FROM SCRATCH",
-    img: "/images/fruit-1.jpeg",
-    price: "$5.50",
-    slug: "how-to-create-a-blog-from-scratch",
-  },
-];
-
 const Home: PageGetIndexDataComp = ({ data, error }) => {
   const { description, title, author, tags, slug, mainImage, categories, viewCount, _id, _createdAt }: any =
     data?.allFeaturedArticle[0].featured;

@@ -68,7 +68,7 @@ const PostPage = ({ mdxSource, dataPage }: mixedReturnedServerData) => {
       <Row justify={"space-between"} css={{ mt: "$xs", mb: "$xs" }}>
         <Col>
           <Text css={{ color: "$accents7", fontWeight: "$semibold", fontSize: "$sm", mr: "10px" }}>
-            {new Date(`${dataPage.publishedAt}`).toUTCString()}
+            {new Date(`${dataPage.publishedAt}`).toISOString().split("T")[0]}
           </Text>
         </Col>
         <Col>
@@ -83,6 +83,13 @@ const PostPage = ({ mdxSource, dataPage }: mixedReturnedServerData) => {
       <article>
         <MDXRemote {...mdxSource} components={allComponent} />
       </article>
+      <div style={{ display: "flex", marginTop: "2rem" }}>
+        {dataPage.tags?.map((value, index) => (
+          <Text key={index} css={{ color: "$red600", fontWeight: "bold", marginRight: "10px" }}>
+            {` #${value} `}
+          </Text>
+        ))}
+      </div>
       <section style={{ marginTop: "4rem" }}>
         <GiscusComment />
       </section>
@@ -98,7 +105,9 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   );
 
   const options = {
-    theme: "one-dark-pro",
+    theme: {
+      dark: "one-dark-pro",
+    },
     onVisitLine(node: any) {
       if (node.children.length === 0) {
         node.children = [{ type: "text", value: " " }];
