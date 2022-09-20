@@ -9,6 +9,8 @@ import { IconoirProvider } from "iconoir-react";
 import NProgress from "nprogress"; //nprogress module
 import "nprogress/nprogress.css";
 
+export { reportWebVitals } from "next-axiom";
+
 //Route Events.
 Router.events.on("routeChangeStart", () => NProgress.start());
 Router.events.on("routeChangeComplete", () => NProgress.done());
