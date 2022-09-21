@@ -36,7 +36,8 @@ const Home: PageGetIndexDataComp = ({ data, error }) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
+export const getServerSideProps: GetServerSideProps = async ({ res, req }) => {
+  res.setHeader("Cache-Control", "public, s-maxage=30, stale-while-revalidate=100");
   // @ts-ignore
   return await ssrGetIndexData.getServerPage({}, { cookies: undefined });
 };
