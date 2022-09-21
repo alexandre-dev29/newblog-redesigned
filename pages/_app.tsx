@@ -8,7 +8,6 @@ import LayoutComponent from "../components/Layout";
 import { IconoirProvider } from "iconoir-react";
 import NProgress from "nprogress"; //nprogress module
 import "nprogress/nprogress.css";
-import Head from "next/head";
 import Script from "next/script";
 
 export { reportWebVitals } from "next-axiom";
@@ -41,16 +40,15 @@ function MyApp({ Component, pageProps }: AppProps) {
       attribute={"class"}
       value={{ light: LightTheme.className, dark: DarkTheme.className }}
     >
-      <Head>
-        <Script
-          data-host="https://onduis.com"
-          data-dnt="true"
-          src="https://onduis.com/js/script.js"
-          id="ZwSg9rf6GA"
-          async
-          defer
-        ></Script>
-      </Head>
+      <Script
+        data-host="https://onduis.com"
+        data-dnt="true"
+        src="https://onduis.com/js/script.js"
+        id="ZwSg9rf6GA"
+        async
+        defer
+      ></Script>
+
       <NextUIProvider>
         <LayoutComponent>
           <IconoirProvider
