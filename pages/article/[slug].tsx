@@ -1,6 +1,6 @@
 import { serialize } from "next-mdx-remote/serialize";
 import matter from "gray-matter";
-import { GetServerSideProps } from "next";
+import { GetServerSideProps, GetStaticPaths } from "next";
 import { MDXRemote } from "next-mdx-remote";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
@@ -10,14 +10,13 @@ import remarkGfm from "remark-gfm";
 import "highlight.js/styles/atom-one-dark.css";
 import { motion, useScroll } from "framer-motion";
 import { Col, Row, Table, Text } from "@nextui-org/react";
-import { ssrGetPostBySlug } from "../../Types/generated/graphqlPages";
+import { ssrGetAllPosts, ssrGetPostBySlug } from "../../Types/generated/graphqlPages";
 import { Post } from "../../Types/generated/graphqlTypes";
 import { SeoData, YouTubeComp } from "../../components";
 import Image from "next/image";
 import { EyeEmpty } from "iconoir-react";
 import GiscusComment from "../../components/GiscusComment";
 import { useRouter } from "next/router";
-import Script from "next/script";
 
 interface mixedReturnedServerData {
   mdxSource: any;
@@ -42,14 +41,12 @@ const PostPage = ({ mdxSource, dataPage }: mixedReturnedServerData) => {
     ),
     YouTubeComp,
     Image,
-    img: (props: any) => <Image {...props} height={450} width={800} layout="responsive" loading="lazy" />,
+    img: (props: any) => <Image {...props} height={450} width={800} layout="responsive" priority={true} />,
     Table,
   };
   const router = useRouter();
   return (
     <div>
-      <Script src="https://unpkg.com/shiki"></Script>
-
       <motion.div className={"progress-bar"} style={{ scaleX: scrollYProgress }} />
       <SeoData
         pageTitle={`${dataPage.title}`}
@@ -101,7 +98,21 @@ const PostPage = ({ mdxSource, dataPage }: mixedReturnedServerData) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async ({ params }) => {
+// @ts-ignore
+export const getStaticPaths: GetStaticPaths = async () => {
+  const { props } = await ssrGetAllPosts.getServerPage(
+    { variables: { limit: 20, offset: 0 } },
+    { cookies: {}, req: undefined }
+  );
+  const paths =
+    props?.data?.allPost?.map((value) => ({
+      params: { slug: value.slug?.current },
+    })) || [];
+
+  return { paths, fallback: false };
+};
+
+export const getStaticProps: GetServerSideProps = async ({ params }) => {
   const { props } = await ssrGetPostBySlug.getServerPage(
     { variables: { slug: params?.slug?.toString() || "" } },
     // @ts-ignore

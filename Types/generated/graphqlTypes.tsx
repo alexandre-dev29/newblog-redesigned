@@ -2048,14 +2048,12 @@ export function useGetOneAuthorQuery(
   const options = { ...defaultOptions, ...baseOptions };
   return Apollo.useQuery<GetOneAuthorQuery, GetOneAuthorQueryVariables>(GetOneAuthorDocument, options);
 }
-
 export function useGetOneAuthorLazyQuery(
   baseOptions?: Apollo.LazyQueryHookOptions<GetOneAuthorQuery, GetOneAuthorQueryVariables>
 ) {
   const options = { ...defaultOptions, ...baseOptions };
   return Apollo.useLazyQuery<GetOneAuthorQuery, GetOneAuthorQueryVariables>(GetOneAuthorDocument, options);
 }
-
 export type GetOneAuthorQueryHookResult = ReturnType<typeof useGetOneAuthorQuery>;
 export type GetOneAuthorLazyQueryHookResult = ReturnType<typeof useGetOneAuthorLazyQuery>;
 export type GetOneAuthorQueryResult = Apollo.QueryResult<GetOneAuthorQuery, GetOneAuthorQueryVariables>;
@@ -2116,7 +2114,6 @@ export function useGetAllCategoriesQuery(
     options
   );
 }
-
 export function useGetAllCategoriesLazyQuery(
   baseOptions?: Apollo.LazyQueryHookOptions<GetAllCategoriesQuery, GetAllCategoriesQueryVariables>
 ) {
@@ -2126,7 +2123,6 @@ export function useGetAllCategoriesLazyQuery(
     options
   );
 }
-
 export type GetAllCategoriesQueryHookResult = ReturnType<typeof useGetAllCategoriesQuery>;
 export type GetAllCategoriesLazyQueryHookResult = ReturnType<typeof useGetAllCategoriesLazyQuery>;
 export type GetAllCategoriesQueryResult = Apollo.QueryResult<
@@ -2187,7 +2183,6 @@ export function useGetCategoryByTitleQuery(
     options
   );
 }
-
 export function useGetCategoryByTitleLazyQuery(
   baseOptions?: Apollo.LazyQueryHookOptions<GetCategoryByTitleQuery, GetCategoryByTitleQueryVariables>
 ) {
@@ -2197,7 +2192,6 @@ export function useGetCategoryByTitleLazyQuery(
     options
   );
 }
-
 export type GetCategoryByTitleQueryHookResult = ReturnType<typeof useGetCategoryByTitleQuery>;
 export type GetCategoryByTitleLazyQueryHookResult = ReturnType<typeof useGetCategoryByTitleLazyQuery>;
 export type GetCategoryByTitleQueryResult = Apollo.QueryResult<
@@ -2247,7 +2241,6 @@ export function useGetOneCategoryQuery(
   const options = { ...defaultOptions, ...baseOptions };
   return Apollo.useQuery<GetOneCategoryQuery, GetOneCategoryQueryVariables>(GetOneCategoryDocument, options);
 }
-
 export function useGetOneCategoryLazyQuery(
   baseOptions?: Apollo.LazyQueryHookOptions<GetOneCategoryQuery, GetOneCategoryQueryVariables>
 ) {
@@ -2257,7 +2250,6 @@ export function useGetOneCategoryLazyQuery(
     options
   );
 }
-
 export type GetOneCategoryQueryHookResult = ReturnType<typeof useGetOneCategoryQuery>;
 export type GetOneCategoryLazyQueryHookResult = ReturnType<typeof useGetOneCategoryLazyQuery>;
 export type GetOneCategoryQueryResult = Apollo.QueryResult<GetOneCategoryQuery, GetOneCategoryQueryVariables>;
@@ -2308,7 +2300,6 @@ export function useGetAllFeaturedPostQuery(
     options
   );
 }
-
 export function useGetAllFeaturedPostLazyQuery(
   baseOptions?: Apollo.LazyQueryHookOptions<GetAllFeaturedPostQuery, GetAllFeaturedPostQueryVariables>
 ) {
@@ -2318,7 +2309,6 @@ export function useGetAllFeaturedPostLazyQuery(
     options
   );
 }
-
 export type GetAllFeaturedPostQueryHookResult = ReturnType<typeof useGetAllFeaturedPostQuery>;
 export type GetAllFeaturedPostLazyQueryHookResult = ReturnType<typeof useGetAllFeaturedPostLazyQuery>;
 export type GetAllFeaturedPostQueryResult = Apollo.QueryResult<
@@ -2359,14 +2349,12 @@ export function useGetAllPostsQuery(
   const options = { ...defaultOptions, ...baseOptions };
   return Apollo.useQuery<GetAllPostsQuery, GetAllPostsQueryVariables>(GetAllPostsDocument, options);
 }
-
 export function useGetAllPostsLazyQuery(
   baseOptions?: Apollo.LazyQueryHookOptions<GetAllPostsQuery, GetAllPostsQueryVariables>
 ) {
   const options = { ...defaultOptions, ...baseOptions };
   return Apollo.useLazyQuery<GetAllPostsQuery, GetAllPostsQueryVariables>(GetAllPostsDocument, options);
 }
-
 export type GetAllPostsQueryHookResult = ReturnType<typeof useGetAllPostsQuery>;
 export type GetAllPostsLazyQueryHookResult = ReturnType<typeof useGetAllPostsLazyQuery>;
 export type GetAllPostsQueryResult = Apollo.QueryResult<GetAllPostsQuery, GetAllPostsQueryVariables>;
@@ -2401,14 +2389,12 @@ export function useGetOnePostQuery(
   const options = { ...defaultOptions, ...baseOptions };
   return Apollo.useQuery<GetOnePostQuery, GetOnePostQueryVariables>(GetOnePostDocument, options);
 }
-
 export function useGetOnePostLazyQuery(
   baseOptions?: Apollo.LazyQueryHookOptions<GetOnePostQuery, GetOnePostQueryVariables>
 ) {
   const options = { ...defaultOptions, ...baseOptions };
   return Apollo.useLazyQuery<GetOnePostQuery, GetOnePostQueryVariables>(GetOnePostDocument, options);
 }
-
 export type GetOnePostQueryHookResult = ReturnType<typeof useGetOnePostQuery>;
 export type GetOnePostLazyQueryHookResult = ReturnType<typeof useGetOnePostLazyQuery>;
 export type GetOnePostQueryResult = Apollo.QueryResult<GetOnePostQuery, GetOnePostQueryVariables>;
@@ -2443,14 +2429,12 @@ export function useGetPostBySlugQuery(
   const options = { ...defaultOptions, ...baseOptions };
   return Apollo.useQuery<GetPostBySlugQuery, GetPostBySlugQueryVariables>(GetPostBySlugDocument, options);
 }
-
 export function useGetPostBySlugLazyQuery(
   baseOptions?: Apollo.LazyQueryHookOptions<GetPostBySlugQuery, GetPostBySlugQueryVariables>
 ) {
   const options = { ...defaultOptions, ...baseOptions };
   return Apollo.useLazyQuery<GetPostBySlugQuery, GetPostBySlugQueryVariables>(GetPostBySlugDocument, options);
 }
-
 export type GetPostBySlugQueryHookResult = ReturnType<typeof useGetPostBySlugQuery>;
 export type GetPostBySlugLazyQueryHookResult = ReturnType<typeof useGetPostBySlugLazyQuery>;
 export type GetPostBySlugQueryResult = Apollo.QueryResult<GetPostBySlugQuery, GetPostBySlugQueryVariables>;
@@ -2492,7 +2476,6 @@ export function useGetIndexPageDataQuery(
     options
   );
 }
-
 export function useGetIndexPageDataLazyQuery(
   baseOptions?: Apollo.LazyQueryHookOptions<GetIndexPageDataQuery, GetIndexPageDataQueryVariables>
 ) {
@@ -2502,7 +2485,6 @@ export function useGetIndexPageDataLazyQuery(
     options
   );
 }
-
 export type GetIndexPageDataQueryHookResult = ReturnType<typeof useGetIndexPageDataQuery>;
 export type GetIndexPageDataLazyQueryHookResult = ReturnType<typeof useGetIndexPageDataLazyQuery>;
 export type GetIndexPageDataQueryResult = Apollo.QueryResult<

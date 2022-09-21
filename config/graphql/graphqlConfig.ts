@@ -14,14 +14,12 @@ export const ErrorLinkHandler = () => {
   const { setState } = GraphqlErrorState;
 
   return onError(({ graphQLErrors, networkError }) => {
-    console.log(graphQLErrors);
     if (graphQLErrors) {
       setState({ messagesError: graphQLErrors.map((a) => a.message) });
       setState({ errorType: ErrorTypeGraphQl.Request });
       setState({ isOpen: true });
     }
     if (networkError) {
-      console.log(networkError);
       setState({ errorType: ErrorTypeGraphQl.Network });
       setState({
         messagesError: ["Connection Issue Please check Your internet connection and try again"],

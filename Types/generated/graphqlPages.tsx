@@ -235,7 +235,6 @@ export async function getServerPageGetAllPosts(
     },
   };
 }
-
 export type PageGetAllPostsComp = React.FC<{ data?: Types.GetAllPostsQuery; error?: Apollo.ApolloError }>;
 export const withPageGetAllPosts =
   (
@@ -275,7 +274,6 @@ export async function getServerPageGetOnePost(
     },
   };
 }
-
 export type PageGetOnePostComp = React.FC<{ data?: Types.GetOnePostQuery; error?: Apollo.ApolloError }>;
 export const withPageGetOnePost =
   (
@@ -315,7 +313,6 @@ export async function getServerPageGetPostBySlug(
     },
   };
 }
-
 export type PageGetPostBySlugComp = React.FC<{ data?: Types.GetPostBySlugQuery; error?: Apollo.ApolloError }>;
 export const withPageGetPostBySlug =
   (
@@ -334,7 +331,6 @@ export const ssrGetPostBySlug = {
   getServerPage: getServerPageGetPostBySlug,
   withPage: withPageGetPostBySlug,
 };
-
 export async function getServerPageGetIndexData(
   options: Omit<Apollo.QueryOptions<Types.GetIndexPageDataQueryVariables>, "query">,
   ctx: ApolloClientContext
@@ -356,7 +352,6 @@ export async function getServerPageGetIndexData(
     },
   };
 }
-
 export type PageGetIndexDataComp = React.FC<{
   data?: Types.GetIndexPageDataQuery;
   error?: Apollo.ApolloError;
