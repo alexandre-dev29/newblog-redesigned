@@ -41,7 +41,13 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       notFound: true,
     };
   }
-  return res;
+
+  return {
+    props: {
+      ...res,
+    },
+    revalidate: 120,
+  };
 };
 export default withApollo(
   ssrGetCategoryByTitle.withPage((arg) => ({

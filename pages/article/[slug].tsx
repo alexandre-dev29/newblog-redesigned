@@ -1,6 +1,6 @@
 import { serialize } from "next-mdx-remote/serialize";
 import matter from "gray-matter";
-import { GetServerSideProps, GetStaticPaths } from "next";
+import { GetStaticPaths, GetStaticProps } from "next";
 import { MDXRemote } from "next-mdx-remote";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
@@ -112,7 +112,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return { paths, fallback: false };
 };
 
-export const getStaticProps: GetServerSideProps = async ({ params }) => {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { props } = await ssrGetPostBySlug.getServerPage(
     { variables: { slug: params?.slug?.toString() || "" } },
     // @ts-ignore
@@ -138,6 +138,7 @@ export const getStaticProps: GetServerSideProps = async ({ params }) => {
       mdxSource,
       dataPage: selectedArticle,
     },
+    revalidate: 120,
   };
 };
 
