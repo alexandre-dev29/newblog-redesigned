@@ -1,8 +1,7 @@
 import type { GetServerSideProps } from "next";
 import { PageGetIndexDataComp, ssrGetIndexData } from "../Types/generated/graphqlPages";
 import { withApollo } from "../config/graphql/withApollo";
-import { ArticleContainer, FeaturedArticleComponent } from "../components";
-import Head from "next/head";
+import { ArticleContainer, FeaturedArticleComponent, SeoData } from "../components";
 
 const Home: PageGetIndexDataComp = ({ data, error }) => {
   const { description, title, author, tags, slug, mainImage, categories, viewCount, _id, _createdAt }: any =
@@ -10,15 +9,12 @@ const Home: PageGetIndexDataComp = ({ data, error }) => {
 
   return (
     <div>
-      <Head>
-        <title>Blog Axel Mwenze</title>
-        <meta
-          name={"description"}
-          content={
-            " I am a software engineer and full stack web developer, Living in DRC and this this my blog created from scratch using NextJs, Graphql, SanityCms and NextUi"
-          }
-        />
-      </Head>
+      <SeoData
+        pageTitle={"Blog Axel Mwenze"}
+        description={
+          " I am a software engineer and full stack web developer, Living in DRC and this this my blog created from scratch using NextJs, Graphql, SanityCms and NextUi"
+        }
+      />
       <FeaturedArticleComponent
         description={description}
         title={title}
