@@ -22,7 +22,7 @@ export function SeoData({ pageTitle, description, imageUrl, keywords, urlPath }:
       <meta property="og:type" content="article" />
       <meta property="og:title" content={`${pageTitle}`} />
       <meta property="og:description" content={`${description}`} />
-      <meta property="og:image" content={imageFromSource(`${imageUrl}`).url()} />
+      {imageUrl && <meta property="og:image" content={imageFromSource(`${imageUrl}`).url()} />}
     </Head>
   );
 }
