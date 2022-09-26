@@ -18,7 +18,7 @@ export function SeoData({ pageTitle, description, imageUrl, keywords, urlPath }:
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta name="author" content="Axel Mwenze" />
       <meta name="keywords" content={keywords} />
-      <meta property="og:url" content={`https://blog.axelmwenze.dev/${urlPath}`} />
+      <meta property="og:url" content={`https://blog.axelmwenze.dev${urlPath}`} />
       <meta property="og:type" content="article" />
       <meta property="og:title" content={`${pageTitle}`} />
       <meta property="og:description" content={`${description}`} />
