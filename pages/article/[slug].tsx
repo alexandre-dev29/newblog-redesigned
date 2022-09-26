@@ -41,7 +41,17 @@ const PostPage = ({ mdxSource, dataPage }: mixedReturnedServerData) => {
     ),
     YouTubeComp,
     Image,
-    img: (props: any) => <Image {...props} height={450} width={800} layout="responsive" priority={true} />,
+    img: (props: any) => (
+      <div style={{ position: "relative", width: "100%", height: "300px" }}>
+        <Image
+          {...props}
+          objectFit={"cover"}
+          layout={"fill"}
+          priority={true}
+          alt={dataPage.mainImage?.asset?.altText}
+        />
+      </div>
+    ),
     Table,
   };
   const router = useRouter();
@@ -128,6 +138,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         rehypeSlug,
         [rehypeAutolinkHeadings, { behavior: "wrap" }],
         rehypeHighlight,
+        require("rehype-accessible-emojis").rehypeAccessibleEmojis,
       ],
       remarkPlugins: [remarkGfm],
     },
