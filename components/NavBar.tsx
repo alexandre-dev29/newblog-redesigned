@@ -9,7 +9,7 @@ export default function NavBarComponent(props: INavBarProps) {
   const { setTheme } = useNextTheme();
   const { isDark, type } = useTheme();
   return (
-    <Navbar isBordered variant="sticky" shouldHideOnScroll={true}>
+    <Navbar isBordered variant="sticky" shouldHideOnScroll={false}>
       <Navbar.Brand css={{ mr: "$4" }}>
         <Link href={"/"}>
           <Text
