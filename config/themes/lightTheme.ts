@@ -6,7 +6,6 @@ export const LightTheme = createTheme({
     colors: {
       selection: "$blue200",
       link: "$blue800",
-      background: "#F5F5F5",
       codeBackGround: "$gray900",
     },
     fonts: {
