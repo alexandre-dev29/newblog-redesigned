@@ -13,7 +13,7 @@ export const FeaturedArticleComponent = ({ title, description, mainImage, slug }
       <Card.Body css={{ p: 0 }}>
         <Image
           src={imageFromSource(`${mainImage?.asset?.url}`).url()}
-          width="800px"
+          width="860px"
           height="500px"
           objectFit="cover"
           alt="Card example background"
@@ -47,7 +47,10 @@ export const FeaturedArticleComponent = ({ title, description, mainImage, slug }
           </Row>
           <Row>
             <Col>
-              <Text css={{ "@smMax": { fontSize: "$sm", textAlign: "center" } }} size={15}>
+              <Text
+                css={{ "@smMax": { fontSize: "$sm", textAlign: "center" }, textAlign: "center" }}
+                size={15}
+              >
                 {description}
               </Text>
             </Col>
