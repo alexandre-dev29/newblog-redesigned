@@ -17,6 +17,7 @@ import Image from "next/image";
 import { EyeEmpty } from "iconoir-react";
 import GiscusComment from "../../components/GiscusComment";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
 interface mixedReturnedServerData {
   mdxSource: any;
@@ -25,6 +26,10 @@ interface mixedReturnedServerData {
 
 const PostPage = ({ mdxSource, dataPage }: mixedReturnedServerData) => {
   const { scrollYProgress } = useScroll();
+  const [showing, setShowing] = useState(false);
+  useEffect(() => {
+    setShowing(true);
+  }, []);
   const allComponent = {
     Text,
     h2: (props: any) => (
@@ -42,7 +47,7 @@ const PostPage = ({ mdxSource, dataPage }: mixedReturnedServerData) => {
     YouTubeComp,
     Image,
     img: (props: any) => (
-      <div style={{ position: "relative", width: "100%", height: "300px" }}>
+      <span style={{ position: "relative", width: "100%", height: "300px", display: "block" }}>
         <Image
           {...props}
           objectFit={"cover"}
@@ -50,7 +55,7 @@ const PostPage = ({ mdxSource, dataPage }: mixedReturnedServerData) => {
           priority={true}
           alt={dataPage.mainImage?.asset?.altText}
         />
-      </div>
+      </span>
     ),
     Table,
   };
@@ -91,9 +96,7 @@ const PostPage = ({ mdxSource, dataPage }: mixedReturnedServerData) => {
           </Row>
         </Col>
       </Row>
-      <article>
-        <MDXRemote {...mdxSource} components={allComponent} />
-      </article>
+      <article>{showing && <MDXRemote {...mdxSource} components={allComponent} />}</article>
       <div style={{ display: "flex", marginTop: "2rem" }}>
         {dataPage.tags?.map((value, index) => (
           <Text key={index} css={{ color: "$red600", fontWeight: "bold", marginRight: "10px" }}>
